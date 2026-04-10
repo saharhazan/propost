@@ -1,8 +1,8 @@
-// PostNadlan — Landing page translations (Hebrew / English)
+// Post-it — Landing page translations (Hebrew / English)
 
 const translations = {
   he: {
-    'meta.title': 'PostNadlan — פרסום אוטומטי לקבוצות פייסבוק',
+    'meta.title': 'Post-it — פרסום אוטומטי לקבוצות פייסבוק',
     'meta.description': 'הבוט החכם שמפרסם את הנכסים שלך בעשרות קבוצות פייסבוק, עם טקסט ייחודי בכל קבוצה, תמונות, ותזמון חכם.',
 
     // Nav
@@ -34,7 +34,7 @@ const translations = {
     'how.step3.desc': 'בחר קבוצות, לחץ פרסם — הבוט עושה את השאר',
 
     // Features
-    'features.title': 'למה PostNadlan?',
+    'features.title': 'למה Post-it?',
     'features.subtitle': 'הכלים שהופכים את הפרסום שלך לחכם יותר',
     'features.ai.title': 'AI שיוצר טקסט ייחודי',
     'features.ai.desc': 'טקסט שונה לכל קבוצה — נראה טבעי, לא ספאם',
@@ -113,11 +113,11 @@ const translations = {
     'footer.terms': 'תנאי שימוש',
     'footer.privacy': 'מדיניות פרטיות',
     'footer.contact': 'צור קשר',
-    'footer.copy': 'PostNadlan © 2026 — כל הזכויות שמורות',
+    'footer.copy': 'Post-it © 2026 — כל הזכויות שמורות',
   },
 
   en: {
-    'meta.title': 'PostNadlan — Automatic posting to Facebook groups',
+    'meta.title': 'Post-it — Automatic posting to Facebook groups',
     'meta.description': 'The smart bot that posts your properties to dozens of Facebook groups with unique text for each group, photos, and smart scheduling.',
 
     // Nav
@@ -149,7 +149,7 @@ const translations = {
     'how.step3.desc': 'Pick groups, click post — the bot does the rest',
 
     // Features
-    'features.title': 'Why PostNadlan?',
+    'features.title': 'Why Post-it?',
     'features.subtitle': 'The tools that make your posting smarter',
     'features.ai.title': 'AI-generated unique text',
     'features.ai.desc': 'Different text for each group — looks natural, not spam',
@@ -228,7 +228,7 @@ const translations = {
     'footer.terms': 'Terms of Service',
     'footer.privacy': 'Privacy Policy',
     'footer.contact': 'Contact',
-    'footer.copy': 'PostNadlan © 2026 — All rights reserved',
+    'footer.copy': 'Post-it © 2026 — All rights reserved',
   },
 };
 
@@ -268,7 +268,7 @@ function applyTranslations(lang) {
 
 function initI18n() {
   // Get saved language or default to Hebrew
-  const saved = localStorage.getItem('postnadlan-lang');
+  const saved = localStorage.getItem('postit-lang');
   const browserLang = navigator.language.startsWith('he') ? 'he' : 'en';
   const lang = saved || 'he'; // Default to Hebrew
 
@@ -280,7 +280,7 @@ function initI18n() {
     if (!target) return;
     const newLang = target.getAttribute('data-lang');
     if (newLang && translations[newLang]) {
-      localStorage.setItem('postnadlan-lang', newLang);
+      localStorage.setItem('postit-lang', newLang);
       applyTranslations(newLang);
     }
   };
