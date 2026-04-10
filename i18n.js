@@ -2,233 +2,223 @@
 
 const translations = {
   he: {
-    'meta.title': 'Propost · פרסום אוטומטי לקבוצות פייסבוק',
-    'meta.description': 'הבוט החכם שמפרסם את הנכסים שלך בעשרות קבוצות פייסבוק, עם טקסט ייחודי בכל קבוצה, תמונות, ותזמון חכם.',
-
-    // Nav
-    'nav.how': 'איך זה עובד',
-    'nav.features': 'תכונות',
-    'nav.pricing': 'מחירים',
-    'nav.faq': 'שאלות נפוצות',
-
-    // CTAs
-    'cta.start': 'התחל בחינם',
-    'cta.choose': 'בחר תוכנית',
+    // Meta
+    'meta.title': 'Propost · אוטומציה חכמה לסוכני נדלן',
+    'meta.description': 'פרסום אוטומטי לקבוצות פייסבוק, בלי להרים אצבע. הבוט החכם של Propost מנהל עבורך את כל עבודת השיווק.',
 
     // Hero
-    'hero.title': 'פרסום אוטומטי לקבוצות פייסבוק<br><span class="hero-highlight">בלי להרים אצבע</span>',
-    'hero.subtitle': 'הבוט החכם שמפרסם את הנכסים שלך בעשרות קבוצות פייסבוק, עם טקסט ייחודי בכל קבוצה, תמונות, ותזמון חכם.',
+    'hero.eyebrow': 'אוטומציה חכמה לסוכני נדלן',
+    'hero.title': 'פרסום אוטומטי לקבוצות פייסבוק, בלי להרים אצבע',
+    'hero.subtitle': 'המערכת של Propost מנהלת עבורך את כל עבודת השיווק הסיזיפית. שלח הודעה אחת בטלגרם, והשאר קורה מעצמו.',
     'hero.cta': 'התחל 3 ימי ניסיון בחינם',
-    'hero.trust1': '100+ סוכנים פעילים',
+    'hero.primaryCta': 'התחל עכשיו בחינם',
+    'hero.secondaryCta': 'צפה בסרטון הסבר',
+    'hero.trust1': '100+ סוכנים',
     'hero.trust2': 'בטוח לחשבון',
     'hero.trust3': 'פיתוח ישראלי',
 
     // How it works
     'how.title': 'איך זה עובד?',
-    'how.subtitle': 'שלושה צעדים פשוטים ואתה מפרסם בעשרות קבוצות',
-    'how.step1.title': 'חבר את הפייסבוק',
-    'how.step1.desc': 'חיבור פשוט דרך הבוט, ללא סיסמאות שנשמרות',
-    'how.step2.title': 'הוסף נכס',
-    'how.step2.desc': 'תמונות, תיאור, מחיר, וה-AI יוצר 5 נוסחים שונים',
-    'how.step3.title': 'פרסם בלחיצה',
-    'how.step3.desc': 'בחר קבוצות, לחץ פרסם, והבוט עושה את השאר',
+    'how.step1.title': 'חיבור ראשוני',
+    'how.step1.desc': 'מחברים את הבוט לחשבון הפייסבוק שלך בצורה מאובטחת. ללא צורך בהתקנה.',
+    'how.step2.title': 'יצירת פוסט',
+    'how.step2.desc': 'שולחים תיאור נכס ותמונות לבוט בטלגרם. אנחנו נדאג לעיבוד הטקסט.',
+    'how.step2.hint': 'גרור קבצים לכאן',
+    'how.step3.title': 'פרסום אוטומטי',
+    'how.step3.desc': 'הבוט מפרסם את הפוסט בכל הקבוצות הרלוונטיות שבחרת מראש.',
+    'how.step3.log1': "פורסם בקבוצת 'נדלן בתל אביב'",
+    'how.step3.log2': "פורסם בקבוצת 'דירות להשכרה'",
 
     // Features
-    'features.title': 'למה Propost?',
-    'features.subtitle': 'הכלים שהופכים את הפרסום שלך לחכם יותר',
-    'features.ai.title': 'AI שיוצר טקסט ייחודי',
-    'features.ai.desc': 'טקסט שונה לכל קבוצה, נראה טבעי ולא ספאם',
+    'features.title': "פיצ'רים חכמים",
+    'features.ai.title': 'טקסט מבוסס AI',
+    'features.ai.desc': 'הבוט הופך רשימת מכולת לפוסט שיווקי מניע לפעולה.',
     'features.schedule.title': 'תזמון חכם',
-    'features.schedule.desc': 'פרסום אוטומטי כל יום, יומיים, או שבוע. אתה בוחר',
-    'features.antispam.title': 'אנטי ספאם מובנה',
-    'features.antispam.desc': 'השהיות, סדר אקראי, הפסקות, שומר על החשבון שלך',
-    'features.collections.title': 'אוספי קבוצות',
-    'features.collections.desc': 'שמור קבוצות מועדפות ופרסם לכולן בלחיצה',
-    'features.photos.title': 'תמונות',
-    'features.photos.desc': 'העלה עד 10 תמונות לכל נכס. תמונות מוכרות יותר',
-    'features.dashboard.title': 'דשבורד',
-    'features.dashboard.desc': 'עקוב אחרי הפרסומים שלך, מה עבר ומה נכשל',
+    'features.schedule.desc': 'פרסום בשעות הכי חזקות בלי שתצטרך להיות ליד המחשב.',
+    'features.antispam.title': 'מערכת הגנת ספאם',
+    'features.antispam.desc': 'מנגנון שמדמה פעילות אנושית כדי למנוע חסימות פייסבוק.',
+    'features.collections.title': 'ניהול קולקציות',
+    'features.collections.desc': 'שמור פוסטים מצליחים לשימוש חוזר בלחיצת כפתור.',
+    'features.photos.title': 'עד 10 תמונות',
+    'features.photos.desc': 'תמיכה בגלריות תמונות מלאות וסרטונים בפוסטים.',
+    'features.dashboard.title': 'דשבורד ביצועים',
+    'features.dashboard.desc': 'מעקב אחרי חשיפה ותגובות מכל הקבוצות במקום אחד.',
+
+    // Mockup section
+    'mockup.title': 'המשרד שלך בטלגרם',
+    'mockup.subtitle': 'פשוט, מהיר וחכם. הבוט שמבין את הנדלן הישראלי.',
+    'mockup.msg1': 'שלום! אנא שלח תיאור לנכס החדש.',
+    'mockup.msg2': 'דירת 4 חדרים בחולון, קומה 3, משופצת מהיסוד. מחיר 2.4 מיליון.',
+    'mockup.msg3': 'קיבלתי. יוצר פוסט שיווקי...',
+    'mockup.msg4': 'מפרסם כעת ב-52 קבוצות נבחרות.',
+    'mockup.callout1': 'פועל 24/7',
+    'mockup.callout2': '50+ קבוצות',
+    'mockup.callout3': 'חוסך 10+ שעות',
 
     // Pricing
-    'pricing.title': 'מחירים',
-    'pricing.subtitle': 'תוכנית לכל סוכן. התחל בחינם, שדרג בכל רגע',
+    'pricing.title': 'תוכניות מחיר',
+    'pricing.subtitle': 'בחר את המסלול שמתאים לקצב העבודה שלך.',
     'pricing.popular': 'הכי פופולרי',
+    'pricing.permonth': ' / חודש',
     'pricing.trial.name': 'ניסיון',
     'pricing.trial.price': 'חינם',
-    'pricing.trial.period': '3 ימים',
-    'pricing.trial.f1': '3 נכסים',
-    'pricing.trial.f2': '5 קבוצות',
-    'pricing.trial.f3': '2 פרסומים ביום',
-    'pricing.trial.f4': 'AI טקסט ייחודי',
-    'pricing.trial.f5': 'תמונות',
-    'pricing.basic.name': 'בסיסי',
-    'pricing.basic.price': '₪49<span class="pricing-mo">/חודש</span>',
-    'pricing.basic.period': 'לסוכן בודד',
-    'pricing.basic.f1': '10 נכסים',
-    'pricing.basic.f2': '15 קבוצות',
-    'pricing.basic.f3': '8 פרסומים ביום',
-    'pricing.basic.f4': 'AI טקסט ייחודי',
-    'pricing.basic.f5': 'תמונות',
-    'pricing.basic.f6': 'אוספי קבוצות',
-    'pricing.pro.name': 'פרו',
-    'pricing.pro.price': '₪99<span class="pricing-mo">/חודש</span>',
-    'pricing.pro.period': 'לסוכן מקצועי',
-    'pricing.pro.f1': 'ללא הגבלת נכסים',
-    'pricing.pro.f2': '30 קבוצות',
-    'pricing.pro.f3': '15 פרסומים ביום',
-    'pricing.pro.f4': 'AI טקסט ייחודי',
-    'pricing.pro.f5': 'תמונות',
-    'pricing.pro.f6': 'אוספי קבוצות',
-    'pricing.pro.f7': 'תזמון אוטומטי',
-    'pricing.pro.f8': 'דשבורד מתקדם',
-    'pricing.agency.name': 'סוכנות',
-    'pricing.agency.price': '₪199<span class="pricing-mo">/חודש</span>',
-    'pricing.agency.period': 'לסוכנויות',
-    'pricing.agency.f1': 'ללא הגבלת נכסים',
-    'pricing.agency.f2': '30 קבוצות',
-    'pricing.agency.f3': '15 פרסומים ביום',
-    'pricing.agency.f4': '3 חשבונות פייסבוק',
-    'pricing.agency.f5': 'כל תכונות הפרו',
-    'pricing.agency.f6': 'דוחות מתקדמים',
-    'pricing.agency.f7': 'תמיכה בעדיפות',
+    'pricing.trial.f1': '3 ימים ללא הגבלה',
+    'pricing.trial.f2': 'גישה לכל הקבוצות',
+    'pricing.trial.cta': 'נסה בחינם',
+    'pricing.pro.name': 'מקצועי',
+    'pricing.pro.f1': 'פרסום ב-50 קבוצות',
+    'pricing.pro.f2': 'כלי AI לכתיבת טקסטים',
+    'pricing.pro.f3': 'תזמון פוסטים מתקדם',
+    'pricing.pro.cta': 'התחל עכשיו',
+    'pricing.agency.name': "אייג'נסי",
+    'pricing.agency.f1': 'עד 5 חשבונות שונים',
+    'pricing.agency.f2': 'דוחות ביצועים מפורטים',
+    'pricing.agency.f3': 'תמיכה אישית בוואטסאפ',
+    'pricing.agency.cta': 'צור קשר',
+
+    // Testimonials
+    'testimonials.title': 'מה אומרים הסוכנים?',
+    'testimonials.t1.initials': 'ר.ב',
+    'testimonials.t1.name': "רונן ברקוביץ'",
+    'testimonials.t1.quote': '"המערכת פשוט חוסכת לי שעות של עבודה סיזיפית. במקום לעבור קבוצה קבוצה, אני שולח הודעה אחת וזה רץ."',
+    'testimonials.t2.initials': 'מ.ל',
+    'testimonials.t2.name': 'מיה לוין',
+    'testimonials.t2.quote': '"ה-AI כותב פוסטים הרבה יותר טוב ממני. כמות הפניות שקיבלתי עלתה ב-40% בחודש הראשון."',
 
     // FAQ
     'faq.title': 'שאלות נפוצות',
-    'faq.q1': 'האם זה בטוח לחשבון?',
-    'faq.a1': 'כן. הבוט פועל עם השהיות אנושיות בין פרסום לפרסום, טקסט שונה לכל קבוצה, וסדר אקראי. מנגנון אנטי ספאם מובנה שומר על החשבון שלך בצורה הטובה ביותר.',
-    'faq.q2': 'איך מתחברים לפייסבוק?',
-    'faq.a2': 'דרך הבוט בטלגרם. החיבור בטוח ומוצפן, ואנחנו לא שומרים את הסיסמה שלך בשום מקום.',
-    'faq.q3': 'כמה קבוצות אפשר?',
-    'faq.a3': 'בתוכנית פרו וסוכנות עד 30 קבוצות. בתוכנית בסיסי 15 קבוצות. בניסיון 5 קבוצות.',
-    'faq.q4': 'האם צריך להתקין משהו?',
-    'faq.a4': 'לא. הכל עובד דרך טלגרם. לא צריך להתקין אפליקציה, תוסף, או שום דבר אחר. פשוט פותחים את הבוט ומתחילים.',
-    'faq.q5': 'איך מבטלים?',
-    'faq.a5': 'בכל רגע, ללא התחייבות. פשוט שולחים הודעה לבוט או יוצרים קשר ואנחנו מבטלים מיד. ללא שאלות, ללא בעיות.',
+    'faq.q1': 'האם החשבון שלי בסכנת חסימה?',
+    'faq.a1': 'לא. המערכת פועלת עם מנגנון השהייה חכם המדמה התנהגות אנושית לחלוטין.',
+    'faq.q2': 'כמה קבוצות ניתן לחבר?',
+    'faq.a2': 'בהתאם לתוכנית שבחרת. תוכנית ה-Pro מאפשרת עד 50 קבוצות בו זמנית.',
+    'faq.q3': 'האם צריך להתקין תוכנה?',
+    'faq.a3': 'לא. הכל מנוהל דרך ענן וניתן לשליטה מלאה דרך בוט הטלגרם שלנו.',
 
     // CTA Banner
-    'cta.title': 'מוכן להפסיק לפרסם ידנית?',
-    'cta.subtitle': 'הצטרף ל-100+ סוכני נדל"ן שכבר חוסכים שעות כל שבוע',
+    'ctaBanner.title': 'מוכן להפסיק לפרסם ידנית?',
+    'ctaBanner.cta': 'התחל עכשיו ללא עלות',
 
     // Footer
-    'footer.terms': 'תנאי שימוש',
-    'footer.privacy': 'מדיניות פרטיות',
-    'footer.contact': 'צור קשר',
-    'footer.copy': 'Propost © 2026 · כל הזכויות שמורות',
+    'footer.tagline': 'הדור הבא של שיווק נדלן אוטומטי. Calculated Precision.',
+    'footer.productHeader': 'מוצר',
+    'footer.product.features': "פיצ'רים",
+    'footer.product.pricing': 'מחירים',
+    'footer.product.faq': 'שאלות נפוצות',
+    'footer.legalHeader': 'משפטי',
+    'footer.legal.privacy': 'פרטיות',
+    'footer.legal.terms': 'תנאי שימוש',
+    'footer.legal.accessibility': 'נגישות',
+    'footer.copy': '© 2026 Propost · מיוצר בגאווה בישראל.',
   },
 
   en: {
-    'meta.title': 'Propost · Automatic posting to Facebook groups',
-    'meta.description': 'The smart bot that posts your properties to dozens of Facebook groups with unique text for each group, photos, and smart scheduling.',
-
-    // Nav
-    'nav.how': 'How it works',
-    'nav.features': 'Features',
-    'nav.pricing': 'Pricing',
-    'nav.faq': 'FAQ',
-
-    // CTAs
-    'cta.start': 'Start free',
-    'cta.choose': 'Choose plan',
+    // Meta
+    'meta.title': 'Propost · Smart automation for real estate agents',
+    'meta.description': 'Automatic Facebook group posting without lifting a finger. The smart Propost bot manages all your marketing work.',
 
     // Hero
-    'hero.title': 'Automatic Facebook group posting<br><span class="hero-highlight">without lifting a finger</span>',
-    'hero.subtitle': 'The smart bot that posts your properties to dozens of Facebook groups with unique text for each group, photos, and smart scheduling.',
+    'hero.eyebrow': 'SMART AUTOMATION FOR REAL ESTATE',
+    'hero.title': 'Automatic Facebook group posting, without lifting a finger',
+    'hero.subtitle': 'The Propost system handles all the tedious marketing work for you. Send one message on Telegram, and the rest happens on its own.',
     'hero.cta': 'Start 3-day free trial',
+    'hero.primaryCta': 'Start now for free',
+    'hero.secondaryCta': 'Watch demo video',
     'hero.trust1': '100+ active agents',
     'hero.trust2': 'Account-safe',
     'hero.trust3': 'Made in Israel',
 
     // How it works
     'how.title': 'How does it work?',
-    'how.subtitle': 'Three simple steps and you post to dozens of groups',
-    'how.step1.title': 'Connect Facebook',
-    'how.step1.desc': 'Simple connection via the bot, no passwords stored',
-    'how.step2.title': 'Add a property',
-    'how.step2.desc': 'Photos, description, price, and AI creates 5 different versions',
-    'how.step3.title': 'Post in one click',
-    'how.step3.desc': 'Pick groups, click post, and the bot does the rest',
+    'how.step1.title': 'Initial connection',
+    'how.step1.desc': 'Connect the bot to your Facebook account securely. No installation required.',
+    'how.step2.title': 'Create a post',
+    'how.step2.desc': 'Send property description and photos to the bot on Telegram. We handle the text processing.',
+    'how.step2.hint': 'Drag files here',
+    'how.step3.title': 'Automatic publishing',
+    'how.step3.desc': 'The bot publishes your post to all the relevant groups you preselected.',
+    'how.step3.log1': "Posted to 'Tel Aviv Real Estate' group",
+    'how.step3.log2': "Posted to 'Apartments for Rent' group",
 
     // Features
-    'features.title': 'Why Propost?',
-    'features.subtitle': 'The tools that make your posting smarter',
-    'features.ai.title': 'AI-generated unique text',
-    'features.ai.desc': 'Different text for each group, looks natural and not spam',
+    'features.title': 'Smart features',
+    'features.ai.title': 'AI-powered text',
+    'features.ai.desc': 'The bot turns a grocery list into a compelling marketing post.',
     'features.schedule.title': 'Smart scheduling',
-    'features.schedule.desc': 'Automatic posting every day, every other day, or weekly. You choose',
-    'features.antispam.title': 'Built-in anti-spam',
-    'features.antispam.desc': 'Delays, random order, breaks, protects your account',
-    'features.collections.title': 'Group collections',
-    'features.collections.desc': 'Save favorite groups and post to all with one click',
-    'features.photos.title': 'Photos',
-    'features.photos.desc': 'Upload up to 10 photos per property. Photos sell better',
-    'features.dashboard.title': 'Dashboard',
-    'features.dashboard.desc': 'Track your posts, what worked and what failed',
+    'features.schedule.desc': 'Post during peak hours without having to be at your computer.',
+    'features.antispam.title': 'Anti-spam protection',
+    'features.antispam.desc': 'A mechanism that simulates human activity to prevent Facebook blocks.',
+    'features.collections.title': 'Collection management',
+    'features.collections.desc': 'Save successful posts for reuse with a single click.',
+    'features.photos.title': 'Up to 10 photos',
+    'features.photos.desc': 'Support for full photo galleries and videos in posts.',
+    'features.dashboard.title': 'Performance dashboard',
+    'features.dashboard.desc': 'Track exposure and responses from all groups in one place.',
+
+    // Mockup section
+    'mockup.title': 'Your office on Telegram',
+    'mockup.subtitle': 'Simple, fast, and smart. The bot that understands Israeli real estate.',
+    'mockup.msg1': 'Hello! Please send a description of the new property.',
+    'mockup.msg2': '4-room apartment in Holon, 3rd floor, fully renovated. Price 2.4 million.',
+    'mockup.msg3': 'Got it. Creating marketing post...',
+    'mockup.msg4': 'Now publishing to 52 selected groups.',
+    'mockup.callout1': 'Runs 24/7',
+    'mockup.callout2': '50+ groups',
+    'mockup.callout3': 'Saves 10+ hours',
 
     // Pricing
-    'pricing.title': 'Pricing',
-    'pricing.subtitle': 'A plan for every agent. Start free, upgrade anytime',
+    'pricing.title': 'Pricing plans',
+    'pricing.subtitle': 'Choose the plan that fits your work pace.',
     'pricing.popular': 'Most popular',
+    'pricing.permonth': ' / month',
     'pricing.trial.name': 'Trial',
     'pricing.trial.price': 'Free',
-    'pricing.trial.period': '3 days',
-    'pricing.trial.f1': '3 properties',
-    'pricing.trial.f2': '5 groups',
-    'pricing.trial.f3': '2 posts/day',
-    'pricing.trial.f4': 'AI unique text',
-    'pricing.trial.f5': 'Photos',
-    'pricing.basic.name': 'Basic',
-    'pricing.basic.price': '₪49<span class="pricing-mo">/month</span>',
-    'pricing.basic.period': 'For solo agents',
-    'pricing.basic.f1': '10 properties',
-    'pricing.basic.f2': '15 groups',
-    'pricing.basic.f3': '8 posts/day',
-    'pricing.basic.f4': 'AI unique text',
-    'pricing.basic.f5': 'Photos',
-    'pricing.basic.f6': 'Group collections',
+    'pricing.trial.f1': '3 days unlimited',
+    'pricing.trial.f2': 'Access to all groups',
+    'pricing.trial.cta': 'Try for free',
     'pricing.pro.name': 'Pro',
-    'pricing.pro.price': '₪99<span class="pricing-mo">/month</span>',
-    'pricing.pro.period': 'For professionals',
-    'pricing.pro.f1': 'Unlimited properties',
-    'pricing.pro.f2': '30 groups',
-    'pricing.pro.f3': '15 posts/day',
-    'pricing.pro.f4': 'AI unique text',
-    'pricing.pro.f5': 'Photos',
-    'pricing.pro.f6': 'Group collections',
-    'pricing.pro.f7': 'Auto scheduling',
-    'pricing.pro.f8': 'Advanced dashboard',
+    'pricing.pro.f1': 'Post to 50 groups',
+    'pricing.pro.f2': 'AI text writing tools',
+    'pricing.pro.f3': 'Advanced post scheduling',
+    'pricing.pro.cta': 'Start now',
     'pricing.agency.name': 'Agency',
-    'pricing.agency.price': '₪199<span class="pricing-mo">/month</span>',
-    'pricing.agency.period': 'For agencies',
-    'pricing.agency.f1': 'Unlimited properties',
-    'pricing.agency.f2': '30 groups',
-    'pricing.agency.f3': '15 posts/day',
-    'pricing.agency.f4': '3 Facebook accounts',
-    'pricing.agency.f5': 'All Pro features',
-    'pricing.agency.f6': 'Advanced reports',
-    'pricing.agency.f7': 'Priority support',
+    'pricing.agency.f1': 'Up to 5 different accounts',
+    'pricing.agency.f2': 'Detailed performance reports',
+    'pricing.agency.f3': 'Personal WhatsApp support',
+    'pricing.agency.cta': 'Contact us',
+
+    // Testimonials
+    'testimonials.title': 'What agents say',
+    'testimonials.t1.initials': 'RB',
+    'testimonials.t1.name': 'Ronen Berkovich',
+    'testimonials.t1.quote': '"The system simply saves me hours of tedious work. Instead of going group by group, I send one message and it runs."',
+    'testimonials.t2.initials': 'ML',
+    'testimonials.t2.name': 'Maya Levin',
+    'testimonials.t2.quote': '"The AI writes posts much better than me. The number of inquiries I got went up 40% in the first month."',
 
     // FAQ
-    'faq.title': 'Frequently Asked Questions',
-    'faq.q1': 'Is it safe for my account?',
-    'faq.a1': 'Yes. The bot operates with human-like delays between posts, different text for each group, and random order. Built-in anti-spam protection keeps your account safe.',
-    'faq.q2': 'How do I connect Facebook?',
-    'faq.a2': 'Through the Telegram bot. The connection is secure and encrypted, and we never store your password anywhere.',
-    'faq.q3': 'How many groups can I post to?',
-    'faq.a3': 'On Pro and Agency plans up to 30 groups. On Basic 15 groups. On Trial 5 groups.',
-    'faq.q4': 'Do I need to install anything?',
-    'faq.a4': 'No. Everything runs through Telegram. No app, extension, or anything else to install. Just open the bot and start.',
-    'faq.q5': 'How do I cancel?',
-    'faq.a5': 'Anytime, no commitment. Just message the bot or contact us and we cancel immediately. No questions asked.',
+    'faq.title': 'Frequently asked questions',
+    'faq.q1': 'Is my account at risk of being blocked?',
+    'faq.a1': 'No. The system operates with a smart delay mechanism that simulates human behavior completely.',
+    'faq.q2': 'How many groups can I connect?',
+    'faq.a2': 'Depends on your plan. The Pro plan allows up to 50 simultaneous groups.',
+    'faq.q3': 'Do I need to install software?',
+    'faq.a3': 'No. Everything is managed through the cloud and can be fully controlled via our Telegram bot.',
 
     // CTA Banner
-    'cta.title': 'Ready to stop posting manually?',
-    'cta.subtitle': 'Join 100+ real estate agents already saving hours every week',
+    'ctaBanner.title': 'Ready to stop posting manually?',
+    'ctaBanner.cta': 'Start now for free',
 
     // Footer
-    'footer.terms': 'Terms of Service',
-    'footer.privacy': 'Privacy Policy',
-    'footer.contact': 'Contact',
-    'footer.copy': 'Propost © 2026 · All rights reserved',
+    'footer.tagline': 'The next generation of automated real estate marketing. Calculated Precision.',
+    'footer.productHeader': 'Product',
+    'footer.product.features': 'Features',
+    'footer.product.pricing': 'Pricing',
+    'footer.product.faq': 'FAQ',
+    'footer.legalHeader': 'Legal',
+    'footer.legal.privacy': 'Privacy',
+    'footer.legal.terms': 'Terms of Service',
+    'footer.legal.accessibility': 'Accessibility',
+    'footer.copy': '© 2026 Propost · Proudly made in Israel.',
   },
 };
 
@@ -236,44 +226,35 @@ function applyTranslations(lang) {
   const dict = translations[lang];
   if (!dict) return;
 
-  // Set html lang + dir
   document.documentElement.lang = lang;
   document.documentElement.dir = lang === 'he' ? 'rtl' : 'ltr';
 
-  // Update all elements with data-i18n
   document.querySelectorAll('[data-i18n]').forEach((el) => {
     const key = el.getAttribute('data-i18n');
     const value = dict[key];
     if (value === undefined) return;
-
-    const useHtml = el.hasAttribute('data-i18n-html');
 
     if (el.tagName === 'META') {
       el.setAttribute('content', value);
     } else if (el.tagName === 'TITLE') {
       el.textContent = value;
       document.title = value;
-    } else if (useHtml) {
-      el.innerHTML = value;
     } else {
       el.textContent = value;
     }
   });
 
-  // Update lang toggle active state
   document.querySelectorAll('.lang-option').forEach((el) => {
     el.classList.toggle('active', el.getAttribute('data-lang') === lang);
   });
 }
 
 function initI18n() {
-  // Get saved language or default to Hebrew
   const saved = localStorage.getItem('propost-lang');
   const lang = saved || 'he';
 
   applyTranslations(lang);
 
-  // Wire up toggle buttons
   const toggleHandler = (e) => {
     const target = e.target.closest('.lang-option');
     if (!target) return;
@@ -284,13 +265,10 @@ function initI18n() {
     }
   };
 
-  const toggleDesktop = document.getElementById('langToggle');
-  const toggleMobile = document.getElementById('langToggleMobile');
-  if (toggleDesktop) toggleDesktop.addEventListener('click', toggleHandler);
-  if (toggleMobile) toggleMobile.addEventListener('click', toggleHandler);
+  const toggle = document.getElementById('langToggle');
+  if (toggle) toggle.addEventListener('click', toggleHandler);
 }
 
-// Init on DOM ready
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initI18n);
 } else {

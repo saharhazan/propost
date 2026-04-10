@@ -1,355 +1,478 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html class="scroll-smooth" dir="rtl" lang="he">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="meta.title">Propost · פרסום אוטומטי לקבוצות פייסבוק</title>
-    <meta name="description" data-i18n="meta.description" content="הבוט החכם שמפרסם את הנכסים שלך בעשרות קבוצות פייסבוק, עם טקסט ייחודי בכל קבוצה, תמונות, ותזמון חכם.">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title data-i18n="meta.title">Propost · אוטומציה חכמה לסוכני נדלן</title>
+<meta name="description" data-i18n="meta.description" content="פרסום אוטומטי לקבוצות פייסבוק, בלי להרים אצבע. הבוט החכם של Propost מנהל עבורך את כל עבודת השיווק."/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%234F46E5'/><path d='M10 8h8a4 4 0 014 4v0a4 4 0 01-4 4h-4v8h-4V8z' fill='white'/></svg>"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&amp;family=Heebo:wght@400;700;800&amp;family=Rubik:wght@400;500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "secondary-container": "#d0e1fb",
+          "on-primary": "#ffffff",
+          "on-surface-variant": "#464555",
+          "outline": "#777587",
+          "surface-container": "#eaedff",
+          "primary-container": "#4f46e5",
+          "on-background": "#131b2e",
+          "surface-container-highest": "#dae2fd",
+          "outline-variant": "#c7c4d8",
+          "surface-container-lowest": "#ffffff",
+          "tertiary-container": "#885500",
+          "background": "#faf8ff",
+          "on-surface": "#131b2e",
+          "tertiary": "#684000",
+          "surface-container-high": "#e2e7ff",
+          "surface-container-low": "#f2f3ff",
+          "surface": "#faf8ff",
+          "primary": "#3525cd",
+          "primary-fixed": "#e2dfff",
+        },
+        borderRadius: {
+          DEFAULT: "1rem",
+          lg: "2rem",
+          xl: "3rem",
+          full: "9999px",
+        },
+        fontFamily: {
+          headline: ["Heebo", "Inter", "sans-serif"],
+          body: ["Rubik", "Inter", "sans-serif"],
+          label: ["Inter", "sans-serif"],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .hero-pattern {
+    background-image: radial-gradient(circle at 2px 2px, #c7c4d8 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+  .glass-nav {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  /* Language toggle */
+  .lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    user-select: none;
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+  .lang-option {
+    padding: 0 4px;
+    transition: color 0.2s ease;
+  }
+  .lang-option.active {
+    color: #3525cd;
+  }
+  .lang-sep {
+    color: #cbd5e1;
+  }
+
+  /* RTL/LTR base */
+  html[dir="ltr"] body { text-align: left; }
+  html[dir="rtl"] body { text-align: right; }
+</style>
 </head>
-<body>
+<body class="bg-background text-on-background font-body">
 
-<!-- Header -->
-<header class="header" id="header">
-    <div class="container header-inner">
-        <a href="#" class="logo">
-            <span class="logo-icon">🏠</span>
-            <span class="logo-text">Propost</span>
-        </a>
-        <nav class="nav">
-            <a href="#how-it-works" data-i18n="nav.how">איך זה עובד</a>
-            <a href="#features" data-i18n="nav.features">תכונות</a>
-            <a href="#pricing" data-i18n="nav.pricing">מחירים</a>
-            <a href="#faq" data-i18n="nav.faq">שאלות נפוצות</a>
-        </nav>
-        <div class="header-actions">
-            <button class="lang-toggle" id="langToggle" aria-label="Switch language">
-                <span class="lang-option" data-lang="he">עברית</span>
-                <span class="lang-sep">|</span>
-                <span class="lang-option" data-lang="en">EN</span>
-            </button>
-            <a href="https://t.me/ProPostBot" class="btn btn-sm" target="_blank" rel="noopener" data-i18n="cta.start">התחל בחינם</a>
-        </div>
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+<!-- 1. STICKY NAV HEADER -->
+<nav class="fixed top-0 w-full z-50 glass-nav bg-slate-50/80 border-none shadow-sm h-20 flex items-center px-4 md:px-6">
+  <div class="flex justify-between items-center w-full max-w-7xl mx-auto">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 bg-gradient-to-br from-primary-container to-primary flex items-center justify-center rounded-lg shadow-lg">
+        <span class="material-symbols-outlined text-white text-2xl">architecture</span>
+      </div>
+      <span class="text-xl font-black tracking-tight font-headline">Propost</span>
     </div>
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#how-it-works" data-i18n="nav.how">איך זה עובד</a>
-        <a href="#features" data-i18n="nav.features">תכונות</a>
-        <a href="#pricing" data-i18n="nav.pricing">מחירים</a>
-        <a href="#faq" data-i18n="nav.faq">שאלות נפוצות</a>
-        <button class="lang-toggle lang-toggle-mobile" id="langToggleMobile" aria-label="Switch language">
-            <span class="lang-option" data-lang="he">עברית</span>
-            <span class="lang-sep">|</span>
-            <span class="lang-option" data-lang="en">EN</span>
-        </button>
-        <a href="https://t.me/ProPostBot" class="btn btn-mobile" target="_blank" rel="noopener" data-i18n="cta.start">התחל בחינם</a>
+    <div class="flex items-center gap-4">
+      <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+        <span class="lang-option" data-lang="he">עברית</span>
+        <span class="lang-sep">|</span>
+        <span class="lang-option" data-lang="en">EN</span>
+      </button>
+      <a href="https://t.me/ProPostBot" target="_blank" rel="noopener" class="bg-primary text-white px-5 py-2.5 rounded-full font-bold text-sm shadow-lg shadow-primary/20 active:scale-95 transition-transform" data-i18n="hero.cta">
+        התחל 3 ימי ניסיון בחינם
+      </a>
     </div>
-</header>
+  </div>
+</nav>
 
-<!-- Hero -->
-<section class="hero">
-    <div class="container hero-content">
-        <h1 class="hero-title" data-i18n="hero.title" data-i18n-html="true">פרסום אוטומטי לקבוצות פייסבוק<br><span class="hero-highlight">בלי להרים אצבע</span></h1>
-        <p class="hero-subtitle" data-i18n="hero.subtitle">הבוט החכם שמפרסם את הנכסים שלך בעשרות קבוצות פייסבוק, עם טקסט ייחודי בכל קבוצה, תמונות, ותזמון חכם.</p>
-        <a href="https://t.me/ProPostBot" class="btn btn-lg" target="_blank" rel="noopener" data-i18n="hero.cta">התחל 3 ימי ניסיון בחינם</a>
-        <div class="hero-trust">
-            <span data-i18n="hero.trust1">⭐ 100+ סוכנים משתמשים</span>
-            <span class="trust-divider">|</span>
-            <span data-i18n="hero.trust2">🔒 בטוח לחשבון</span>
-            <span class="trust-divider">|</span>
-            <span data-i18n="hero.trust3">🇮🇱 תוצרת ישראל</span>
-        </div>
+<!-- 2. HERO SECTION -->
+<section class="relative pt-32 pb-16 px-6 hero-pattern">
+  <div class="max-w-7xl mx-auto text-center">
+    <span class="inline-block px-4 py-1.5 mb-6 text-xs font-black tracking-widest uppercase text-indigo-600 bg-indigo-50 rounded-full" data-i18n="hero.eyebrow">
+      אוטומציה חכמה לסוכני נדלן
+    </span>
+    <h1 class="text-4xl md:text-6xl font-black font-headline leading-tight mb-6 text-on-background" data-i18n="hero.title">
+      פרסום אוטומטי לקבוצות פייסבוק, בלי להרים אצבע
+    </h1>
+    <p class="text-slate-600 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed" data-i18n="hero.subtitle">
+      המערכת של Propost מנהלת עבורך את כל עבודת השיווק הסיזיפית. שלח הודעה אחת בטלגרם, והשאר קורה מעצמו.
+    </p>
+    <div class="flex flex-col gap-4 max-w-sm mx-auto mb-16">
+      <a href="https://t.me/ProPostBot" target="_blank" rel="noopener" class="w-full bg-gradient-to-r from-primary-container to-indigo-700 text-white py-4 rounded-xl font-bold text-lg shadow-xl shadow-indigo-200 block text-center" data-i18n="hero.primaryCta">
+        התחל עכשיו בחינם
+      </a>
+      <a href="#how-it-works" class="w-full flex items-center justify-center gap-2 text-primary font-bold py-3 hover:bg-surface-container-low rounded-xl transition-colors">
+        <span class="material-symbols-outlined">play_circle</span>
+        <span data-i18n="hero.secondaryCta">צפה בסרטון הסבר</span>
+      </a>
     </div>
-    <div class="hero-wave">
-        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-            <path d="M0,64 C360,120 720,0 1440,64 L1440,120 L0,120 Z" fill="#ffffff"/>
-        </svg>
+    <!-- Trust Row -->
+    <div class="grid grid-cols-3 gap-4 border-t border-outline-variant/20 pt-10">
+      <div class="flex flex-col items-center">
+        <span class="material-symbols-outlined text-indigo-600 mb-2">shield_person</span>
+        <span class="text-xs font-bold text-on-background" data-i18n="hero.trust1">100+ סוכנים</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <span class="material-symbols-outlined text-indigo-600 mb-2">lock</span>
+        <span class="text-xs font-bold text-on-background" data-i18n="hero.trust2">בטוח לחשבון</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <span class="material-symbols-outlined text-indigo-600 mb-2">flag</span>
+        <span class="text-xs font-bold text-on-background" data-i18n="hero.trust3">פיתוח ישראלי</span>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- How It Works -->
-<section class="section" id="how-it-works">
-    <div class="container">
-        <h2 class="section-title" data-i18n="how.title">איך זה עובד?</h2>
-        <p class="section-subtitle" data-i18n="how.subtitle">שלושה צעדים פשוטים ואתה מפרסם בעשרות קבוצות</p>
-        <div class="steps-grid">
-            <div class="step-card">
-                <div class="step-number">1</div>
-                <div class="step-icon">🔗</div>
-                <h3 class="step-title" data-i18n="how.step1.title">חבר את הפייסבוק</h3>
-                <p class="step-desc" data-i18n="how.step1.desc">חיבור פשוט דרך הבוט, ללא סיסמאות שנשמרות</p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">2</div>
-                <div class="step-icon">🏡</div>
-                <h3 class="step-title" data-i18n="how.step2.title">הוסף נכס</h3>
-                <p class="step-desc" data-i18n="how.step2.desc">תמונות, תיאור, מחיר, וה-AI יוצר 5 נוסחים שונים</p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">3</div>
-                <div class="step-icon">🚀</div>
-                <h3 class="step-title" data-i18n="how.step3.title">פרסם בלחיצה</h3>
-                <p class="step-desc" data-i18n="how.step3.desc">בחר קבוצות, לחץ פרסם, והבוט עושה את השאר</p>
-            </div>
-        </div>
-    </div>
+<!-- 3. LOGO BAR -->
+<section class="py-12 bg-surface-container-low/50 overflow-hidden">
+  <div class="flex items-center justify-around opacity-40 grayscale gap-8 px-6 overflow-x-auto no-scrollbar">
+    <span class="text-xl font-black tracking-tighter whitespace-nowrap">ANGLO SAXON</span>
+    <span class="text-xl font-black tracking-tighter whitespace-nowrap">RE/MAX</span>
+    <span class="text-xl font-black tracking-tighter whitespace-nowrap">CENTURY 21</span>
+    <span class="text-xl font-black tracking-tighter whitespace-nowrap">KELLER WILLIAMS</span>
+  </div>
 </section>
 
-<!-- Features -->
-<section class="section section-gray" id="features">
-    <div class="container">
-        <h2 class="section-title" data-i18n="features.title">למה Propost?</h2>
-        <p class="section-subtitle" data-i18n="features.subtitle">הכלים שהופכים את הפרסום שלך לחכם יותר</p>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🤖</div>
-                <h3 class="feature-title" data-i18n="features.ai.title">AI שיוצר טקסט ייחודי</h3>
-                <p class="feature-desc" data-i18n="features.ai.desc">טקסט שונה לכל קבוצה, נראה טבעי ולא ספאם</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📅</div>
-                <h3 class="feature-title" data-i18n="features.schedule.title">תזמון חכם</h3>
-                <p class="feature-desc" data-i18n="features.schedule.desc">פרסום אוטומטי כל יום, יומיים, או שבוע. אתה בוחר</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🛡️</div>
-                <h3 class="feature-title" data-i18n="features.antispam.title">אנטי-ספאם מובנה</h3>
-                <p class="feature-desc" data-i18n="features.antispam.desc">השהיות, סדר אקראי, הפסקות, שומר על החשבון שלך</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📁</div>
-                <h3 class="feature-title" data-i18n="features.collections.title">אוספי קבוצות</h3>
-                <p class="feature-desc" data-i18n="features.collections.desc">שמור קבוצות מועדפות ופרסם לכולן בלחיצה</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📸</div>
-                <h3 class="feature-title" data-i18n="features.photos.title">תמונות</h3>
-                <p class="feature-desc" data-i18n="features.photos.desc">העלה עד 10 תמונות לכל נכס. תמונות מוכרות יותר</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3 class="feature-title" data-i18n="features.dashboard.title">דשבורד</h3>
-                <p class="feature-desc" data-i18n="features.dashboard.desc">עקוב אחרי הפרסומים שלך, מה עבר ומה נכשל</p>
-            </div>
+<!-- 4. HOW IT WORKS -->
+<section id="how-it-works" class="py-20 px-6 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl font-black font-headline mb-12 text-center" data-i18n="how.title">איך זה עובד?</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Step 01 -->
+      <div class="bg-surface-container-lowest p-8 rounded-lg shadow-sm border border-outline-variant/10">
+        <div class="flex justify-between items-start mb-6">
+          <span class="text-4xl font-black text-indigo-100">01</span>
+          <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center">
+            <span class="material-symbols-outlined">link</span>
+          </div>
         </div>
+        <h3 class="text-xl font-bold mb-3" data-i18n="how.step1.title">חיבור ראשוני</h3>
+        <p class="text-slate-500 mb-6" data-i18n="how.step1.desc">מחברים את הבוט לחשבון הפייסבוק שלך בצורה מאובטחת. ללא צורך בהתקנה.</p>
+        <div class="bg-slate-50 rounded-lg p-4 font-mono text-[10px] text-slate-400" dir="ltr">
+          { connection: "secure", token: "********", status: "active" }
+        </div>
+      </div>
+      <!-- Step 02 -->
+      <div class="bg-surface-container-lowest p-8 rounded-lg shadow-sm border border-outline-variant/10">
+        <div class="flex justify-between items-start mb-6">
+          <span class="text-4xl font-black text-indigo-100">02</span>
+          <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center">
+            <span class="material-symbols-outlined">note_add</span>
+          </div>
+        </div>
+        <h3 class="text-xl font-bold mb-3" data-i18n="how.step2.title">יצירת פוסט</h3>
+        <p class="text-slate-500 mb-6" data-i18n="how.step2.desc">שולחים תיאור נכס ותמונות לבוט בטלגרם. אנחנו נדאג לעיבוד הטקסט.</p>
+        <div class="border-2 border-dashed border-slate-200 rounded-lg p-4 text-center">
+          <span class="material-symbols-outlined text-slate-300">upload_file</span>
+          <p class="text-[10px] text-slate-400 mt-1" data-i18n="how.step2.hint">גרור קבצים לכאן</p>
+        </div>
+      </div>
+      <!-- Step 03 -->
+      <div class="bg-surface-container-lowest p-8 rounded-lg shadow-sm border border-outline-variant/10">
+        <div class="flex justify-between items-start mb-6">
+          <span class="text-4xl font-black text-indigo-100">03</span>
+          <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center">
+            <span class="material-symbols-outlined">send</span>
+          </div>
+        </div>
+        <h3 class="text-xl font-bold mb-3" data-i18n="how.step3.title">פרסום אוטומטי</h3>
+        <p class="text-slate-500 mb-6" data-i18n="how.step3.desc">הבוט מפרסם את הפוסט בכל הקבוצות הרלוונטיות שבחרת מראש.</p>
+        <div class="space-y-2">
+          <div class="flex items-center gap-2 bg-green-50 p-2 rounded text-[10px] text-green-700">
+            <span class="material-symbols-outlined text-xs">check_circle</span>
+            <span data-i18n="how.step3.log1">פורסם בקבוצת 'נדלן בתל אביב'</span>
+          </div>
+          <div class="flex items-center gap-2 bg-green-50 p-2 rounded text-[10px] text-green-700">
+            <span class="material-symbols-outlined text-xs">check_circle</span>
+            <span data-i18n="how.step3.log2">פורסם בקבוצת 'דירות להשכרה'</span>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- Pricing -->
-<section class="section" id="pricing">
-    <div class="container">
-        <h2 class="section-title" data-i18n="pricing.title">מחירים</h2>
-        <p class="section-subtitle" data-i18n="pricing.subtitle">תוכנית לכל סוכן. התחל בחינם, שדרג בכל רגע</p>
-        <div class="pricing-grid">
-            <div class="pricing-card">
-                <div class="pricing-header">
-                    <h3 class="pricing-name" data-i18n="pricing.trial.name">ניסיון</h3>
-                    <div class="pricing-price" data-i18n="pricing.trial.price">חינם</div>
-                    <div class="pricing-period" data-i18n="pricing.trial.period">3 ימים</div>
-                </div>
-                <ul class="pricing-features">
-                    <li data-i18n="pricing.trial.f1">3 נכסים</li>
-                    <li data-i18n="pricing.trial.f2">5 קבוצות</li>
-                    <li data-i18n="pricing.trial.f3">2 פרסומים ביום</li>
-                    <li data-i18n="pricing.trial.f4">AI טקסט ייחודי</li>
-                    <li data-i18n="pricing.trial.f5">תמונות</li>
-                </ul>
-                <a href="https://t.me/ProPostBot" class="btn btn-outline" target="_blank" rel="noopener" data-i18n="cta.start">התחל בחינם</a>
-            </div>
-            <div class="pricing-card">
-                <div class="pricing-header">
-                    <h3 class="pricing-name" data-i18n="pricing.basic.name">בסיסי</h3>
-                    <div class="pricing-price" data-i18n="pricing.basic.price" data-i18n-html="true">₪49<span class="pricing-mo">/חודש</span></div>
-                    <div class="pricing-period" data-i18n="pricing.basic.period">לסוכן בודד</div>
-                </div>
-                <ul class="pricing-features">
-                    <li data-i18n="pricing.basic.f1">10 נכסים</li>
-                    <li data-i18n="pricing.basic.f2">15 קבוצות</li>
-                    <li data-i18n="pricing.basic.f3">8 פרסומים ביום</li>
-                    <li data-i18n="pricing.basic.f4">AI טקסט ייחודי</li>
-                    <li data-i18n="pricing.basic.f5">תמונות</li>
-                    <li data-i18n="pricing.basic.f6">אוספי קבוצות</li>
-                </ul>
-                <a href="https://t.me/ProPostBot" class="btn btn-outline" target="_blank" rel="noopener" data-i18n="cta.choose">בחר תוכנית</a>
-            </div>
-            <div class="pricing-card pricing-popular">
-                <div class="pricing-badge" data-i18n="pricing.popular">הכי פופולרי</div>
-                <div class="pricing-header">
-                    <h3 class="pricing-name" data-i18n="pricing.pro.name">פרו</h3>
-                    <div class="pricing-price" data-i18n="pricing.pro.price" data-i18n-html="true">₪99<span class="pricing-mo">/חודש</span></div>
-                    <div class="pricing-period" data-i18n="pricing.pro.period">לסוכן מקצועי</div>
-                </div>
-                <ul class="pricing-features">
-                    <li data-i18n="pricing.pro.f1">ללא הגבלת נכסים</li>
-                    <li data-i18n="pricing.pro.f2">30 קבוצות</li>
-                    <li data-i18n="pricing.pro.f3">15 פרסומים ביום</li>
-                    <li data-i18n="pricing.pro.f4">AI טקסט ייחודי</li>
-                    <li data-i18n="pricing.pro.f5">תמונות</li>
-                    <li data-i18n="pricing.pro.f6">אוספי קבוצות</li>
-                    <li data-i18n="pricing.pro.f7">תזמון אוטומטי</li>
-                    <li data-i18n="pricing.pro.f8">דשבורד מתקדם</li>
-                </ul>
-                <a href="https://t.me/ProPostBot" class="btn" target="_blank" rel="noopener" data-i18n="cta.choose">בחר תוכנית</a>
-            </div>
-            <div class="pricing-card">
-                <div class="pricing-header">
-                    <h3 class="pricing-name" data-i18n="pricing.agency.name">סוכנות</h3>
-                    <div class="pricing-price" data-i18n="pricing.agency.price" data-i18n-html="true">₪199<span class="pricing-mo">/חודש</span></div>
-                    <div class="pricing-period" data-i18n="pricing.agency.period">לסוכנויות</div>
-                </div>
-                <ul class="pricing-features">
-                    <li data-i18n="pricing.agency.f1">ללא הגבלת נכסים</li>
-                    <li data-i18n="pricing.agency.f2">30 קבוצות</li>
-                    <li data-i18n="pricing.agency.f3">15 פרסומים ביום</li>
-                    <li data-i18n="pricing.agency.f4">3 חשבונות פייסבוק</li>
-                    <li data-i18n="pricing.agency.f5">כל תכונות הפרו</li>
-                    <li data-i18n="pricing.agency.f6">דוחות מתקדמים</li>
-                    <li data-i18n="pricing.agency.f7">תמיכה בעדיפות</li>
-                </ul>
-                <a href="https://t.me/ProPostBot" class="btn btn-outline" target="_blank" rel="noopener" data-i18n="cta.choose">בחר תוכנית</a>
-            </div>
+<!-- 5. FEATURES GRID -->
+<section id="features" class="py-20 px-6">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl font-black font-headline mb-12 text-center" data-i18n="features.title">פיצ'רים חכמים</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- AI Content -->
+      <div class="bg-surface p-8 rounded-lg border border-outline-variant/10 flex items-start gap-4">
+        <div class="shrink-0 text-indigo-600"><span class="material-symbols-outlined">auto_awesome</span></div>
+        <div>
+          <h3 class="font-bold text-lg mb-1" data-i18n="features.ai.title">טקסט מבוסס AI</h3>
+          <p class="text-sm text-slate-500" data-i18n="features.ai.desc">הבוט הופך רשימת מכולת לפוסט שיווקי מניע לפעולה.</p>
         </div>
+      </div>
+      <!-- Scheduling -->
+      <div class="bg-surface p-8 rounded-lg border border-outline-variant/10 flex items-start gap-4">
+        <div class="shrink-0 text-indigo-600"><span class="material-symbols-outlined">calendar_month</span></div>
+        <div>
+          <h3 class="font-bold text-lg mb-1" data-i18n="features.schedule.title">תזמון חכם</h3>
+          <p class="text-sm text-slate-500" data-i18n="features.schedule.desc">פרסום בשעות הכי חזקות בלי שתצטרך להיות ליד המחשב.</p>
+        </div>
+      </div>
+      <!-- Anti-Spam -->
+      <div class="bg-surface p-8 rounded-lg border border-outline-variant/10 flex items-start gap-4">
+        <div class="shrink-0 text-indigo-600"><span class="material-symbols-outlined">verified_user</span></div>
+        <div>
+          <h3 class="font-bold text-lg mb-1" data-i18n="features.antispam.title">מערכת הגנת ספאם</h3>
+          <p class="text-sm text-slate-500" data-i18n="features.antispam.desc">מנגנון שמדמה פעילות אנושית כדי למנוע חסימות פייסבוק.</p>
+        </div>
+      </div>
+      <!-- Folders -->
+      <div class="bg-surface p-8 rounded-lg border border-outline-variant/10 flex items-start gap-4">
+        <div class="shrink-0 text-indigo-600"><span class="material-symbols-outlined">folder_special</span></div>
+        <div>
+          <h3 class="font-bold text-lg mb-1" data-i18n="features.collections.title">ניהול קולקציות</h3>
+          <p class="text-sm text-slate-500" data-i18n="features.collections.desc">שמור פוסטים מצליחים לשימוש חוזר בלחיצת כפתור.</p>
+        </div>
+      </div>
+      <!-- Images -->
+      <div class="bg-surface p-8 rounded-lg border border-outline-variant/10 flex items-start gap-4">
+        <div class="shrink-0 text-indigo-600"><span class="material-symbols-outlined">image</span></div>
+        <div>
+          <h3 class="font-bold text-lg mb-1" data-i18n="features.photos.title">עד 10 תמונות</h3>
+          <p class="text-sm text-slate-500" data-i18n="features.photos.desc">תמיכה בגלריות תמונות מלאות וסרטונים בפוסטים.</p>
+        </div>
+      </div>
+      <!-- Dashboard -->
+      <div class="bg-surface p-8 rounded-lg border border-outline-variant/10 flex items-start gap-4">
+        <div class="shrink-0 text-indigo-600"><span class="material-symbols-outlined">analytics</span></div>
+        <div>
+          <h3 class="font-bold text-lg mb-1" data-i18n="features.dashboard.title">דשבורד ביצועים</h3>
+          <p class="text-sm text-slate-500" data-i18n="features.dashboard.desc">מעקב אחרי חשיפה ותגובות מכל הקבוצות במקום אחד.</p>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- FAQ -->
-<section class="section section-gray" id="faq">
-    <div class="container">
-        <h2 class="section-title" data-i18n="faq.title">שאלות נפוצות</h2>
-        <div class="faq-list">
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    <span data-i18n="faq.q1">האם זה בטוח לחשבון?</span>
-                    <span class="faq-arrow">&#x276F;</span>
-                </button>
-                <div class="faq-answer">
-                    <p data-i18n="faq.a1">כן! הבוט פועל עם השהיות אנושיות בין פרסום לפרסום, טקסט שונה לכל קבוצה, וסדר אקראי. מנגנון אנטי-ספאם מובנה שומר על החשבון שלך בצורה הטובה ביותר.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    <span data-i18n="faq.q2">איך מתחברים לפייסבוק?</span>
-                    <span class="faq-arrow">&#x276F;</span>
-                </button>
-                <div class="faq-answer">
-                    <p data-i18n="faq.a2">דרך הבוט בטלגרם. החיבור בטוח ומוצפן, ואנחנו לא שומרים את הסיסמה שלך בשום מקום.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    <span data-i18n="faq.q3">כמה קבוצות אפשר?</span>
-                    <span class="faq-arrow">&#x276F;</span>
-                </button>
-                <div class="faq-answer">
-                    <p data-i18n="faq.a3">בתוכנית פרו וסוכנות עד 30 קבוצות. בתוכנית בסיסי 15 קבוצות. בניסיון 5 קבוצות.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    <span data-i18n="faq.q4">האם צריך להתקין משהו?</span>
-                    <span class="faq-arrow">&#x276F;</span>
-                </button>
-                <div class="faq-answer">
-                    <p data-i18n="faq.a4">לא! הכל עובד דרך טלגרם. לא צריך להתקין אפליקציה, תוסף, או שום דבר אחר. פשוט פותחים את הבוט ומתחילים.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    <span data-i18n="faq.q5">איך מבטלים?</span>
-                    <span class="faq-arrow">&#x276F;</span>
-                </button>
-                <div class="faq-answer">
-                    <p data-i18n="faq.a5">בכל רגע, ללא התחייבות. פשוט שולחים הודעה לבוט או יוצרים קשר ואנחנו מבטלים מיד. ללא שאלות, ללא בעיות.</p>
-                </div>
-            </div>
+<!-- 6. PRODUCT MOCKUP -->
+<section class="py-20 px-6 bg-slate-900 text-white overflow-hidden relative">
+  <div class="relative z-10 text-center mb-12">
+    <h2 class="text-3xl font-black font-headline mb-4" data-i18n="mockup.title">המשרד שלך בטלגרם</h2>
+    <p class="text-slate-400" data-i18n="mockup.subtitle">פשוט, מהיר וחכם. הבוט שמבין את הנדלן הישראלי.</p>
+  </div>
+  <div class="relative max-w-[280px] mx-auto bg-slate-800 rounded-[3rem] p-4 border-[8px] border-slate-700 shadow-2xl">
+    <div class="bg-[#1c242f] rounded-[2rem] h-[500px] relative overflow-hidden flex flex-col">
+      <!-- Header Mockup -->
+      <div class="bg-[#242f3d] p-4 flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-xs">P</div>
+        <div>
+          <div class="text-[10px] font-bold">ProPostBot</div>
+          <div class="text-[8px] text-primary-fixed">bot</div>
         </div>
+      </div>
+      <!-- Chat area -->
+      <div class="flex-1 p-4 space-y-4 overflow-y-auto">
+        <div class="bg-[#2b3949] p-3 rounded-lg rounded-tr-none max-w-[80%] text-[10px] ml-auto" data-i18n="mockup.msg1">שלום! אנא שלח תיאור לנכס החדש.</div>
+        <div class="bg-[#3525cd] p-3 rounded-lg rounded-tl-none max-w-[80%] text-[10px]" data-i18n="mockup.msg2">דירת 4 חדרים בחולון, קומה 3, משופצת מהיסוד. מחיר 2.4 מיליון.</div>
+        <div class="bg-[#2b3949] p-3 rounded-lg rounded-tr-none max-w-[80%] text-[10px] ml-auto">
+          <span data-i18n="mockup.msg3">קיבלתי. יוצר פוסט שיווקי...</span>
+          <div class="mt-2 text-indigo-400" data-i18n="mockup.msg4">מפרסם כעת ב-52 קבוצות נבחרות.</div>
+        </div>
+      </div>
     </div>
+    <!-- Floating Callouts -->
+    <div class="absolute -right-8 top-12 bg-white text-slate-900 p-3 rounded-xl shadow-xl border border-slate-100 flex items-center gap-2">
+      <span class="material-symbols-outlined text-green-500 text-sm">bolt</span>
+      <span class="text-[10px] font-bold" data-i18n="mockup.callout1">פועל 24/7</span>
+    </div>
+    <div class="absolute -left-12 top-40 bg-white text-slate-900 p-3 rounded-xl shadow-xl border border-slate-100 flex items-center gap-2">
+      <span class="material-symbols-outlined text-indigo-500 text-sm">groups</span>
+      <span class="text-[10px] font-bold" data-i18n="mockup.callout2">50+ קבוצות</span>
+    </div>
+    <div class="absolute -right-12 bottom-20 bg-white text-slate-900 p-3 rounded-xl shadow-xl border border-slate-100 flex items-center gap-2">
+      <span class="material-symbols-outlined text-orange-500 text-sm">schedule</span>
+      <span class="text-[10px] font-bold" data-i18n="mockup.callout3">חוסך 10+ שעות</span>
+    </div>
+  </div>
 </section>
 
-<!-- CTA Banner -->
-<section class="cta-section">
-    <div class="container">
-        <h2 class="cta-title" data-i18n="cta.title">מוכן להפסיק לפרסם ידנית?</h2>
-        <p class="cta-subtitle" data-i18n="cta.subtitle">הצטרף ל-100+ סוכני נדל"ן שכבר חוסכים שעות כל שבוע</p>
-        <a href="https://t.me/ProPostBot" class="btn btn-lg btn-white" target="_blank" rel="noopener" data-i18n="hero.cta">התחל 3 ימי ניסיון בחינם</a>
+<!-- 7. PRICING -->
+<section id="pricing" class="py-20 px-6">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl font-black font-headline mb-4 text-center" data-i18n="pricing.title">תוכניות מחיר</h2>
+    <p class="text-center text-slate-500 mb-12" data-i18n="pricing.subtitle">בחר את המסלול שמתאים לקצב העבודה שלך.</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Trial -->
+      <div class="bg-surface-container-lowest p-8 rounded-lg border border-outline-variant/20">
+        <h3 class="text-xl font-bold mb-1" data-i18n="pricing.trial.name">ניסיון</h3>
+        <div class="text-3xl font-black mb-6" data-i18n="pricing.trial.price">חינם</div>
+        <ul class="space-y-3 text-sm text-slate-600 mb-8">
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-indigo-600 text-sm">check</span><span data-i18n="pricing.trial.f1">3 ימים ללא הגבלה</span></li>
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-indigo-600 text-sm">check</span><span data-i18n="pricing.trial.f2">גישה לכל הקבוצות</span></li>
+        </ul>
+        <a href="https://t.me/ProPostBot" target="_blank" rel="noopener" class="w-full block text-center py-3 rounded-lg border-2 border-primary text-primary font-bold" data-i18n="pricing.trial.cta">נסה בחינם</a>
+      </div>
+      <!-- Pro -->
+      <div class="bg-indigo-600 p-8 rounded-lg shadow-xl shadow-indigo-200 relative overflow-hidden">
+        <div class="absolute top-4 left-4 bg-indigo-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tighter" data-i18n="pricing.popular">Most Popular</div>
+        <h3 class="text-xl font-bold text-white mb-1" data-i18n="pricing.pro.name">מקצועי</h3>
+        <div class="text-3xl font-black text-white mb-6">₪99<span class="text-sm font-normal opacity-70" data-i18n="pricing.permonth"> / חודש</span></div>
+        <ul class="space-y-3 text-sm text-indigo-100 mb-8">
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-white text-sm">check</span><span data-i18n="pricing.pro.f1">פרסום ב-50 קבוצות</span></li>
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-white text-sm">check</span><span data-i18n="pricing.pro.f2">כלי AI לכתיבת טקסטים</span></li>
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-white text-sm">check</span><span data-i18n="pricing.pro.f3">תזמון פוסטים מתקדם</span></li>
+        </ul>
+        <a href="https://t.me/ProPostBot" target="_blank" rel="noopener" class="w-full block text-center py-3 rounded-lg bg-white text-indigo-600 font-bold" data-i18n="pricing.pro.cta">התחל עכשיו</a>
+      </div>
+      <!-- Agency -->
+      <div class="bg-surface-container-lowest p-8 rounded-lg border border-outline-variant/20">
+        <h3 class="text-xl font-bold mb-1" data-i18n="pricing.agency.name">אייג'נסי</h3>
+        <div class="text-3xl font-black mb-6">₪199<span class="text-sm font-normal opacity-70" data-i18n="pricing.permonth"> / חודש</span></div>
+        <ul class="space-y-3 text-sm text-slate-600 mb-8">
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-indigo-600 text-sm">check</span><span data-i18n="pricing.agency.f1">עד 5 חשבונות שונים</span></li>
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-indigo-600 text-sm">check</span><span data-i18n="pricing.agency.f2">דוחות ביצועים מפורטים</span></li>
+          <li class="flex items-center gap-2"><span class="material-symbols-outlined text-indigo-600 text-sm">check</span><span data-i18n="pricing.agency.f3">תמיכה אישית בוואטסאפ</span></li>
+        </ul>
+        <a href="https://t.me/ProPostBot" target="_blank" rel="noopener" class="w-full block text-center py-3 rounded-lg border-2 border-slate-200 text-slate-800 font-bold" data-i18n="pricing.agency.cta">צור קשר</a>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- Footer -->
-<footer class="footer">
-    <div class="container footer-inner">
-        <div class="footer-brand">
-            <span class="logo-icon">🏠</span>
-            <span class="logo-text">Propost</span>
+<!-- 8. TESTIMONIALS -->
+<section class="py-20 px-6 bg-indigo-50/50">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl font-black font-headline mb-12 text-center" data-i18n="testimonials.title">מה אומרים הסוכנים?</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-white p-8 rounded-lg shadow-sm">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center font-bold text-slate-600" data-i18n="testimonials.t1.initials">ר.ב</div>
+          <div class="font-bold" data-i18n="testimonials.t1.name">רונן ברקוביץ'</div>
         </div>
-        <div class="footer-links">
-            <a href="#" data-i18n="footer.terms">תנאי שימוש</a>
-            <a href="#" data-i18n="footer.privacy">מדיניות פרטיות</a>
-            <a href="#" data-i18n="footer.contact">צור קשר</a>
+        <p class="text-sm text-slate-600 italic" data-i18n="testimonials.t1.quote">"המערכת פשוט חוסכת לי שעות של עבודה סיזיפית. במקום לעבור קבוצה קבוצה, אני שולח הודעה אחת וזה רץ."</p>
+      </div>
+      <div class="bg-white p-8 rounded-lg shadow-sm">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center font-bold text-slate-600" data-i18n="testimonials.t2.initials">מ.ל</div>
+          <div class="font-bold" data-i18n="testimonials.t2.name">מיה לוין</div>
         </div>
-        <div class="footer-telegram">
-            Telegram: <a href="https://t.me/ProPostBot" target="_blank" rel="noopener">@ProPostBot</a>
-        </div>
-        <div class="footer-copy" data-i18n="footer.copy">Propost &copy; 2026 · כל הזכויות שמורות</div>
+        <p class="text-sm text-slate-600 italic" data-i18n="testimonials.t2.quote">"ה-AI כותב פוסטים הרבה יותר טוב ממני. כמות הפניות שקיבלתי עלתה ב-40% בחודש הראשון."</p>
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- 9. FAQ -->
+<section id="faq" class="py-20 px-6">
+  <h2 class="text-3xl font-black font-headline mb-12 text-center" data-i18n="faq.title">שאלות נפוצות</h2>
+  <div class="space-y-4 max-w-2xl mx-auto">
+    <details class="group bg-surface-container-low rounded-lg">
+      <summary class="flex justify-between items-center p-6 cursor-pointer font-bold list-none">
+        <span data-i18n="faq.q1">האם החשבון שלי בסכנת חסימה?</span>
+        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+      </summary>
+      <div class="px-6 pb-6 text-sm text-slate-600" data-i18n="faq.a1">
+        לא. המערכת פועלת עם מנגנון השהייה חכם המדמה התנהגות אנושית לחלוטין.
+      </div>
+    </details>
+    <details class="group bg-surface-container-low rounded-lg">
+      <summary class="flex justify-between items-center p-6 cursor-pointer font-bold list-none">
+        <span data-i18n="faq.q2">כמה קבוצות ניתן לחבר?</span>
+        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+      </summary>
+      <div class="px-6 pb-6 text-sm text-slate-600" data-i18n="faq.a2">
+        בהתאם לתוכנית שבחרת. תוכנית ה-Pro מאפשרת עד 50 קבוצות בו זמנית.
+      </div>
+    </details>
+    <details class="group bg-surface-container-low rounded-lg">
+      <summary class="flex justify-between items-center p-6 cursor-pointer font-bold list-none">
+        <span data-i18n="faq.q3">האם צריך להתקין תוכנה?</span>
+        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+      </summary>
+      <div class="px-6 pb-6 text-sm text-slate-600" data-i18n="faq.a3">
+        לא. הכל מנוהל דרך ענן וניתן לשליטה מלאה דרך בוט הטלגרם שלנו.
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- 10. CTA BANNER -->
+<section class="px-6 py-20">
+  <div class="max-w-7xl mx-auto bg-gradient-to-br from-primary to-indigo-800 rounded-lg p-12 text-center shadow-2xl relative overflow-hidden">
+    <div class="relative z-10">
+      <h2 class="text-3xl font-black font-headline text-white mb-6" data-i18n="ctaBanner.title">מוכן להפסיק לפרסם ידנית?</h2>
+      <a href="https://t.me/ProPostBot" target="_blank" rel="noopener" class="inline-block bg-white text-primary px-8 py-4 rounded-xl font-black text-lg shadow-xl shadow-black/20" data-i18n="ctaBanner.cta">התחל עכשיו ללא עלות</a>
+    </div>
+    <div class="absolute inset-0 opacity-10 hero-pattern"></div>
+  </div>
+</section>
+
+<!-- 11. FOOTER -->
+<footer class="bg-slate-100 py-16 px-6">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12">
+    <div class="col-span-2">
+      <div class="flex items-center gap-2 mb-4">
+        <div class="w-8 h-8 bg-primary rounded flex items-center justify-center">
+          <span class="material-symbols-outlined text-white text-lg">architecture</span>
+        </div>
+        <span class="text-lg font-black font-headline">Propost</span>
+      </div>
+      <p class="text-xs text-slate-500 leading-relaxed max-w-xs" data-i18n="footer.tagline">הדור הבא של שיווק נדלן אוטומטי. Calculated Precision.</p>
+    </div>
+    <div class="flex flex-col gap-4">
+      <h4 class="font-bold text-sm uppercase tracking-wider text-slate-400" data-i18n="footer.productHeader">מוצר</h4>
+      <a class="text-sm text-slate-600 hover:text-primary" href="#features" data-i18n="footer.product.features">פיצ'רים</a>
+      <a class="text-sm text-slate-600 hover:text-primary" href="#pricing" data-i18n="footer.product.pricing">מחירים</a>
+      <a class="text-sm text-slate-600 hover:text-primary" href="#faq" data-i18n="footer.product.faq">שאלות נפוצות</a>
+    </div>
+    <div class="flex flex-col gap-4">
+      <h4 class="font-bold text-sm uppercase tracking-wider text-slate-400" data-i18n="footer.legalHeader">משפטי</h4>
+      <a class="text-sm text-slate-600 hover:text-primary" href="#" data-i18n="footer.legal.privacy">פרטיות</a>
+      <a class="text-sm text-slate-600 hover:text-primary" href="#" data-i18n="footer.legal.terms">תנאי שימוש</a>
+      <a class="text-sm text-slate-600 hover:text-primary" href="#" data-i18n="footer.legal.accessibility">נגישות</a>
+    </div>
+  </div>
+  <div class="mt-16 pt-8 border-t border-slate-200 flex flex-col items-center gap-4 text-xs text-slate-500">
+    <div class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-sm">flag</span>
+      <span data-i18n="footer.copy">© 2026 Propost · מיוצר בגאווה בישראל.</span>
+    </div>
+  </div>
 </footer>
 
 <script src="i18n.js"></script>
-<script>
-// Sticky header
-const header = document.getElementById('header');
-window.addEventListener('scroll', () => {
-    header.classList.toggle('header-scrolled', window.scrollY > 50);
-});
-
-// Mobile menu toggle
-const mobileToggle = document.getElementById('mobileToggle');
-const mobileMenu = document.getElementById('mobileMenu');
-mobileToggle.addEventListener('click', () => {
-    mobileToggle.classList.toggle('active');
-    mobileMenu.classList.toggle('open');
-});
-
-// Close mobile menu on link click
-mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-        mobileToggle.classList.remove('active');
-        mobileMenu.classList.remove('open');
-    });
-});
-
-// FAQ accordion
-document.querySelectorAll('.faq-question').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const item = btn.parentElement;
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-        document.querySelectorAll('.faq-question').forEach(b => b.setAttribute('aria-expanded', 'false'));
-        if (!isOpen) {
-            item.classList.add('open');
-            btn.setAttribute('aria-expanded', 'true');
-        }
-    });
-});
-
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const offset = header.offsetHeight + 20;
-            const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-            window.scrollTo({ top, behavior: 'smooth' });
-        }
-    });
-});
-</script>
-
 </body>
 </html>
