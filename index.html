@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="meta.title">PostNadlan — פרסום אוטומטי לקבוצות פייסבוק</title>
+    <meta name="description" data-i18n="meta.description" content="הבוט החכם שמפרסם את הנכסים שלך בעשרות קבוצות פייסבוק, עם טקסט ייחודי בכל קבוצה, תמונות, ותזמון חכם.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+</head>
+<body>
+
+<!-- Header -->
+<header class="header" id="header">
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <span class="logo-icon">🏠</span>
+            <span class="logo-text">PostNadlan</span>
+        </a>
+        <nav class="nav">
+            <a href="#how-it-works" data-i18n="nav.how">איך זה עובד</a>
+            <a href="#features" data-i18n="nav.features">תכונות</a>
+            <a href="#pricing" data-i18n="nav.pricing">מחירים</a>
+            <a href="#faq" data-i18n="nav.faq">שאלות נפוצות</a>
+        </nav>
+        <div class="header-actions">
+            <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+                <span class="lang-option" data-lang="he">עברית</span>
+                <span class="lang-sep">|</span>
+                <span class="lang-option" data-lang="en">EN</span>
+            </button>
+            <a href="https://t.me/PostNadlanBot" class="btn btn-sm" target="_blank" rel="noopener" data-i18n="cta.start">התחל בחינם</a>
+        </div>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#how-it-works" data-i18n="nav.how">איך זה עובד</a>
+        <a href="#features" data-i18n="nav.features">תכונות</a>
+        <a href="#pricing" data-i18n="nav.pricing">מחירים</a>
+        <a href="#faq" data-i18n="nav.faq">שאלות נפוצות</a>
+        <button class="lang-toggle lang-toggle-mobile" id="langToggleMobile" aria-label="Switch language">
+            <span class="lang-option" data-lang="he">עברית</span>
+            <span class="lang-sep">|</span>
+            <span class="lang-option" data-lang="en">EN</span>
+        </button>
+        <a href="https://t.me/PostNadlanBot" class="btn btn-mobile" target="_blank" rel="noopener" data-i18n="cta.start">התחל בחינם</a>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="container hero-content">
+        <h1 class="hero-title" data-i18n="hero.title" data-i18n-html="true">פרסום אוטומטי לקבוצות פייסבוק<br><span class="hero-highlight">— בלי להרים אצבע</span></h1>
+        <p class="hero-subtitle" data-i18n="hero.subtitle">הבוט החכם שמפרסם את הנכסים שלך בעשרות קבוצות פייסבוק, עם טקסט ייחודי בכל קבוצה, תמונות, ותזמון חכם.</p>
+        <a href="https://t.me/PostNadlanBot" class="btn btn-lg" target="_blank" rel="noopener" data-i18n="hero.cta">התחל בחינם — 3 ימי ניסיון</a>
+        <div class="hero-trust">
+            <span data-i18n="hero.trust1">⭐ 100+ סוכנים משתמשים</span>
+            <span class="trust-divider">|</span>
+            <span data-i18n="hero.trust2">🔒 בטוח לחשבון</span>
+            <span class="trust-divider">|</span>
+            <span data-i18n="hero.trust3">🇮🇱 תוצרת ישראל</span>
+        </div>
+    </div>
+    <div class="hero-wave">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+            <path d="M0,64 C360,120 720,0 1440,64 L1440,120 L0,120 Z" fill="#ffffff"/>
+        </svg>
+    </div>
+</section>
+
+<!-- How It Works -->
+<section class="section" id="how-it-works">
+    <div class="container">
+        <h2 class="section-title" data-i18n="how.title">איך זה עובד?</h2>
+        <p class="section-subtitle" data-i18n="how.subtitle">שלושה צעדים פשוטים ואתה מפרסם בעשרות קבוצות</p>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <div class="step-icon">🔗</div>
+                <h3 class="step-title" data-i18n="how.step1.title">חבר את הפייסבוק</h3>
+                <p class="step-desc" data-i18n="how.step1.desc">חיבור פשוט דרך הבוט, ללא סיסמאות שנשמרות</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <div class="step-icon">🏡</div>
+                <h3 class="step-title" data-i18n="how.step2.title">הוסף נכס</h3>
+                <p class="step-desc" data-i18n="how.step2.desc">תמונות, תיאור, מחיר — וה-AI יוצר 5 נוסחים שונים</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <div class="step-icon">🚀</div>
+                <h3 class="step-title" data-i18n="how.step3.title">פרסם בלחיצה</h3>
+                <p class="step-desc" data-i18n="how.step3.desc">בחר קבוצות, לחץ פרסם — הבוט עושה את השאר</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="section section-gray" id="features">
+    <div class="container">
+        <h2 class="section-title" data-i18n="features.title">למה PostNadlan?</h2>
+        <p class="section-subtitle" data-i18n="features.subtitle">הכלים שהופכים את הפרסום שלך לחכם יותר</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3 class="feature-title" data-i18n="features.ai.title">AI שיוצר טקסט ייחודי</h3>
+                <p class="feature-desc" data-i18n="features.ai.desc">טקסט שונה לכל קבוצה — נראה טבעי, לא ספאם</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📅</div>
+                <h3 class="feature-title" data-i18n="features.schedule.title">תזמון חכם</h3>
+                <p class="feature-desc" data-i18n="features.schedule.desc">פרסום אוטומטי כל יום, יומיים, או שבוע — אתה בוחר</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3 class="feature-title" data-i18n="features.antispam.title">אנטי-ספאם מובנה</h3>
+                <p class="feature-desc" data-i18n="features.antispam.desc">השהיות, סדר אקראי, הפסקות — שומר על החשבון שלך</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📁</div>
+                <h3 class="feature-title" data-i18n="features.collections.title">אוספי קבוצות</h3>
+                <p class="feature-desc" data-i18n="features.collections.desc">שמור קבוצות מועדפות בקבוצות — פרסם לכולן בלחיצה</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📸</div>
+                <h3 class="feature-title" data-i18n="features.photos.title">תמונות</h3>
+                <p class="feature-desc" data-i18n="features.photos.desc">העלה עד 10 תמונות לכל נכס — תמונות מוכרות יותר</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3 class="feature-title" data-i18n="features.dashboard.title">דשבורד</h3>
+                <p class="feature-desc" data-i18n="features.dashboard.desc">עקוב אחרי הפרסומים שלך — מה עבר, מה נכשל</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing -->
+<section class="section" id="pricing">
+    <div class="container">
+        <h2 class="section-title" data-i18n="pricing.title">מחירים</h2>
+        <p class="section-subtitle" data-i18n="pricing.subtitle">תוכנית לכל סוכן — התחל בחינם, שדרג בכל רגע</p>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3 class="pricing-name" data-i18n="pricing.trial.name">ניסיון</h3>
+                    <div class="pricing-price" data-i18n="pricing.trial.price">חינם</div>
+                    <div class="pricing-period" data-i18n="pricing.trial.period">3 ימים</div>
+                </div>
+                <ul class="pricing-features">
+                    <li data-i18n="pricing.trial.f1">3 נכסים</li>
+                    <li data-i18n="pricing.trial.f2">5 קבוצות</li>
+                    <li data-i18n="pricing.trial.f3">2 פרסומים ביום</li>
+                    <li data-i18n="pricing.trial.f4">AI טקסט ייחודי</li>
+                    <li data-i18n="pricing.trial.f5">תמונות</li>
+                </ul>
+                <a href="https://t.me/PostNadlanBot" class="btn btn-outline" target="_blank" rel="noopener" data-i18n="cta.start">התחל בחינם</a>
+            </div>
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3 class="pricing-name" data-i18n="pricing.basic.name">בסיסי</h3>
+                    <div class="pricing-price" data-i18n="pricing.basic.price" data-i18n-html="true">₪49<span class="pricing-mo">/חודש</span></div>
+                    <div class="pricing-period" data-i18n="pricing.basic.period">לסוכן בודד</div>
+                </div>
+                <ul class="pricing-features">
+                    <li data-i18n="pricing.basic.f1">10 נכסים</li>
+                    <li data-i18n="pricing.basic.f2">15 קבוצות</li>
+                    <li data-i18n="pricing.basic.f3">8 פרסומים ביום</li>
+                    <li data-i18n="pricing.basic.f4">AI טקסט ייחודי</li>
+                    <li data-i18n="pricing.basic.f5">תמונות</li>
+                    <li data-i18n="pricing.basic.f6">אוספי קבוצות</li>
+                </ul>
+                <a href="https://t.me/PostNadlanBot" class="btn btn-outline" target="_blank" rel="noopener" data-i18n="cta.choose">בחר תוכנית</a>
+            </div>
+            <div class="pricing-card pricing-popular">
+                <div class="pricing-badge" data-i18n="pricing.popular">הכי פופולרי</div>
+                <div class="pricing-header">
+                    <h3 class="pricing-name" data-i18n="pricing.pro.name">פרו</h3>
+                    <div class="pricing-price" data-i18n="pricing.pro.price" data-i18n-html="true">₪99<span class="pricing-mo">/חודש</span></div>
+                    <div class="pricing-period" data-i18n="pricing.pro.period">לסוכן מקצועי</div>
+                </div>
+                <ul class="pricing-features">
+                    <li data-i18n="pricing.pro.f1">ללא הגבלת נכסים</li>
+                    <li data-i18n="pricing.pro.f2">30 קבוצות</li>
+                    <li data-i18n="pricing.pro.f3">15 פרסומים ביום</li>
+                    <li data-i18n="pricing.pro.f4">AI טקסט ייחודי</li>
+                    <li data-i18n="pricing.pro.f5">תמונות</li>
+                    <li data-i18n="pricing.pro.f6">אוספי קבוצות</li>
+                    <li data-i18n="pricing.pro.f7">תזמון אוטומטי</li>
+                    <li data-i18n="pricing.pro.f8">דשבורד מתקדם</li>
+                </ul>
+                <a href="https://t.me/PostNadlanBot" class="btn" target="_blank" rel="noopener" data-i18n="cta.choose">בחר תוכנית</a>
+            </div>
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3 class="pricing-name" data-i18n="pricing.agency.name">סוכנות</h3>
+                    <div class="pricing-price" data-i18n="pricing.agency.price" data-i18n-html="true">₪199<span class="pricing-mo">/חודש</span></div>
+                    <div class="pricing-period" data-i18n="pricing.agency.period">לסוכנויות</div>
+                </div>
+                <ul class="pricing-features">
+                    <li data-i18n="pricing.agency.f1">ללא הגבלת נכסים</li>
+                    <li data-i18n="pricing.agency.f2">30 קבוצות</li>
+                    <li data-i18n="pricing.agency.f3">15 פרסומים ביום</li>
+                    <li data-i18n="pricing.agency.f4">3 חשבונות פייסבוק</li>
+                    <li data-i18n="pricing.agency.f5">כל תכונות הפרו</li>
+                    <li data-i18n="pricing.agency.f6">דוחות מתקדמים</li>
+                    <li data-i18n="pricing.agency.f7">תמיכה בעדיפות</li>
+                </ul>
+                <a href="https://t.me/PostNadlanBot" class="btn btn-outline" target="_blank" rel="noopener" data-i18n="cta.choose">בחר תוכנית</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-gray" id="faq">
+    <div class="container">
+        <h2 class="section-title" data-i18n="faq.title">שאלות נפוצות</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span data-i18n="faq.q1">האם זה בטוח לחשבון?</span>
+                    <span class="faq-arrow">&#x276F;</span>
+                </button>
+                <div class="faq-answer">
+                    <p data-i18n="faq.a1">כן! הבוט פועל עם השהיות אנושיות בין פרסום לפרסום, טקסט שונה לכל קבוצה, וסדר אקראי. מנגנון אנטי-ספאם מובנה שומר על החשבון שלך בצורה הטובה ביותר.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span data-i18n="faq.q2">איך מתחברים לפייסבוק?</span>
+                    <span class="faq-arrow">&#x276F;</span>
+                </button>
+                <div class="faq-answer">
+                    <p data-i18n="faq.a2">דרך הבוט בטלגרם. החיבור בטוח ומוצפן, ואנחנו לא שומרים את הסיסמה שלך בשום מקום.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span data-i18n="faq.q3">כמה קבוצות אפשר?</span>
+                    <span class="faq-arrow">&#x276F;</span>
+                </button>
+                <div class="faq-answer">
+                    <p data-i18n="faq.a3">בתוכנית פרו וסוכנות — עד 30 קבוצות. בתוכנית בסיסי — 15 קבוצות. בניסיון — 5 קבוצות.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span data-i18n="faq.q4">האם צריך להתקין משהו?</span>
+                    <span class="faq-arrow">&#x276F;</span>
+                </button>
+                <div class="faq-answer">
+                    <p data-i18n="faq.a4">לא! הכל עובד דרך טלגרם. לא צריך להתקין אפליקציה, תוסף, או שום דבר אחר. פשוט פותחים את הבוט ומתחילים.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span data-i18n="faq.q5">איך מבטלים?</span>
+                    <span class="faq-arrow">&#x276F;</span>
+                </button>
+                <div class="faq-answer">
+                    <p data-i18n="faq.a5">בכל רגע, ללא התחייבות. פשוט שולחים הודעה לבוט או יוצרים קשר ואנחנו מבטלים מיד. ללא שאלות, ללא בעיות.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-section">
+    <div class="container">
+        <h2 class="cta-title" data-i18n="cta.title">מוכן להפסיק לפרסם ידנית?</h2>
+        <p class="cta-subtitle" data-i18n="cta.subtitle">הצטרף ל-100+ סוכני נדל"ן שכבר חוסכים שעות כל שבוע</p>
+        <a href="https://t.me/PostNadlanBot" class="btn btn-lg btn-white" target="_blank" rel="noopener" data-i18n="hero.cta">התחל בחינם — 3 ימי ניסיון</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container footer-inner">
+        <div class="footer-brand">
+            <span class="logo-icon">🏠</span>
+            <span class="logo-text">PostNadlan</span>
+        </div>
+        <div class="footer-links">
+            <a href="#" data-i18n="footer.terms">תנאי שימוש</a>
+            <a href="#" data-i18n="footer.privacy">מדיניות פרטיות</a>
+            <a href="#" data-i18n="footer.contact">צור קשר</a>
+        </div>
+        <div class="footer-telegram">
+            Telegram: <a href="https://t.me/PostNadlanBot" target="_blank" rel="noopener">@PostNadlanBot</a>
+        </div>
+        <div class="footer-copy" data-i18n="footer.copy">PostNadlan &copy; 2026 — כל הזכויות שמורות</div>
+    </div>
+</footer>
+
+<script src="i18n.js"></script>
+<script>
+// Sticky header
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+    header.classList.toggle('header-scrolled', window.scrollY > 50);
+});
+
+// Mobile menu toggle
+const mobileToggle = document.getElementById('mobileToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+mobileToggle.addEventListener('click', () => {
+    mobileToggle.classList.toggle('active');
+    mobileMenu.classList.toggle('open');
+});
+
+// Close mobile menu on link click
+mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileToggle.classList.remove('active');
+        mobileMenu.classList.remove('open');
+    });
+});
+
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        document.querySelectorAll('.faq-question').forEach(b => b.setAttribute('aria-expanded', 'false'));
+        if (!isOpen) {
+            item.classList.add('open');
+            btn.setAttribute('aria-expanded', 'true');
+        }
+    });
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            const offset = header.offsetHeight + 20;
+            const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top, behavior: 'smooth' });
+        }
+    });
+});
+</script>
+
+</body>
+</html>
