@@ -1,8 +1,8 @@
-// Post-it — Landing page translations (Hebrew / English)
+// Propost · Landing page translations (Hebrew / English)
 
 const translations = {
   he: {
-    'meta.title': 'Post-it — פרסום אוטומטי לקבוצות פייסבוק',
+    'meta.title': 'Propost · פרסום אוטומטי לקבוצות פייסבוק',
     'meta.description': 'הבוט החכם שמפרסם את הנכסים שלך בעשרות קבוצות פייסבוק, עם טקסט ייחודי בכל קבוצה, תמונות, ותזמון חכם.',
 
     // Nav
@@ -16,12 +16,12 @@ const translations = {
     'cta.choose': 'בחר תוכנית',
 
     // Hero
-    'hero.title': 'פרסום אוטומטי לקבוצות פייסבוק<br><span class="hero-highlight">— בלי להרים אצבע</span>',
+    'hero.title': 'פרסום אוטומטי לקבוצות פייסבוק<br><span class="hero-highlight">בלי להרים אצבע</span>',
     'hero.subtitle': 'הבוט החכם שמפרסם את הנכסים שלך בעשרות קבוצות פייסבוק, עם טקסט ייחודי בכל קבוצה, תמונות, ותזמון חכם.',
-    'hero.cta': 'התחל בחינם — 3 ימי ניסיון',
-    'hero.trust1': '⭐ 100+ סוכנים משתמשים',
-    'hero.trust2': '🔒 בטוח לחשבון',
-    'hero.trust3': '🇮🇱 תוצרת ישראל',
+    'hero.cta': 'התחל 3 ימי ניסיון בחינם',
+    'hero.trust1': '100+ סוכנים פעילים',
+    'hero.trust2': 'בטוח לחשבון',
+    'hero.trust3': 'פיתוח ישראלי',
 
     // How it works
     'how.title': 'איך זה עובד?',
@@ -29,29 +29,29 @@ const translations = {
     'how.step1.title': 'חבר את הפייסבוק',
     'how.step1.desc': 'חיבור פשוט דרך הבוט, ללא סיסמאות שנשמרות',
     'how.step2.title': 'הוסף נכס',
-    'how.step2.desc': 'תמונות, תיאור, מחיר — וה-AI יוצר 5 נוסחים שונים',
+    'how.step2.desc': 'תמונות, תיאור, מחיר, וה-AI יוצר 5 נוסחים שונים',
     'how.step3.title': 'פרסם בלחיצה',
-    'how.step3.desc': 'בחר קבוצות, לחץ פרסם — הבוט עושה את השאר',
+    'how.step3.desc': 'בחר קבוצות, לחץ פרסם, והבוט עושה את השאר',
 
     // Features
-    'features.title': 'למה Post-it?',
+    'features.title': 'למה Propost?',
     'features.subtitle': 'הכלים שהופכים את הפרסום שלך לחכם יותר',
     'features.ai.title': 'AI שיוצר טקסט ייחודי',
-    'features.ai.desc': 'טקסט שונה לכל קבוצה — נראה טבעי, לא ספאם',
+    'features.ai.desc': 'טקסט שונה לכל קבוצה, נראה טבעי ולא ספאם',
     'features.schedule.title': 'תזמון חכם',
-    'features.schedule.desc': 'פרסום אוטומטי כל יום, יומיים, או שבוע — אתה בוחר',
-    'features.antispam.title': 'אנטי-ספאם מובנה',
-    'features.antispam.desc': 'השהיות, סדר אקראי, הפסקות — שומר על החשבון שלך',
+    'features.schedule.desc': 'פרסום אוטומטי כל יום, יומיים, או שבוע. אתה בוחר',
+    'features.antispam.title': 'אנטי ספאם מובנה',
+    'features.antispam.desc': 'השהיות, סדר אקראי, הפסקות, שומר על החשבון שלך',
     'features.collections.title': 'אוספי קבוצות',
-    'features.collections.desc': 'שמור קבוצות מועדפות בקבוצות — פרסם לכולן בלחיצה',
+    'features.collections.desc': 'שמור קבוצות מועדפות ופרסם לכולן בלחיצה',
     'features.photos.title': 'תמונות',
-    'features.photos.desc': 'העלה עד 10 תמונות לכל נכס — תמונות מוכרות יותר',
+    'features.photos.desc': 'העלה עד 10 תמונות לכל נכס. תמונות מוכרות יותר',
     'features.dashboard.title': 'דשבורד',
-    'features.dashboard.desc': 'עקוב אחרי הפרסומים שלך — מה עבר, מה נכשל',
+    'features.dashboard.desc': 'עקוב אחרי הפרסומים שלך, מה עבר ומה נכשל',
 
     // Pricing
     'pricing.title': 'מחירים',
-    'pricing.subtitle': 'תוכנית לכל סוכן — התחל בחינם, שדרג בכל רגע',
+    'pricing.subtitle': 'תוכנית לכל סוכן. התחל בחינם, שדרג בכל רגע',
     'pricing.popular': 'הכי פופולרי',
     'pricing.trial.name': 'ניסיון',
     'pricing.trial.price': 'חינם',
@@ -95,13 +95,13 @@ const translations = {
     // FAQ
     'faq.title': 'שאלות נפוצות',
     'faq.q1': 'האם זה בטוח לחשבון?',
-    'faq.a1': 'כן! הבוט פועל עם השהיות אנושיות בין פרסום לפרסום, טקסט שונה לכל קבוצה, וסדר אקראי. מנגנון אנטי-ספאם מובנה שומר על החשבון שלך בצורה הטובה ביותר.',
+    'faq.a1': 'כן. הבוט פועל עם השהיות אנושיות בין פרסום לפרסום, טקסט שונה לכל קבוצה, וסדר אקראי. מנגנון אנטי ספאם מובנה שומר על החשבון שלך בצורה הטובה ביותר.',
     'faq.q2': 'איך מתחברים לפייסבוק?',
     'faq.a2': 'דרך הבוט בטלגרם. החיבור בטוח ומוצפן, ואנחנו לא שומרים את הסיסמה שלך בשום מקום.',
     'faq.q3': 'כמה קבוצות אפשר?',
-    'faq.a3': 'בתוכנית פרו וסוכנות — עד 30 קבוצות. בתוכנית בסיסי — 15 קבוצות. בניסיון — 5 קבוצות.',
+    'faq.a3': 'בתוכנית פרו וסוכנות עד 30 קבוצות. בתוכנית בסיסי 15 קבוצות. בניסיון 5 קבוצות.',
     'faq.q4': 'האם צריך להתקין משהו?',
-    'faq.a4': 'לא! הכל עובד דרך טלגרם. לא צריך להתקין אפליקציה, תוסף, או שום דבר אחר. פשוט פותחים את הבוט ומתחילים.',
+    'faq.a4': 'לא. הכל עובד דרך טלגרם. לא צריך להתקין אפליקציה, תוסף, או שום דבר אחר. פשוט פותחים את הבוט ומתחילים.',
     'faq.q5': 'איך מבטלים?',
     'faq.a5': 'בכל רגע, ללא התחייבות. פשוט שולחים הודעה לבוט או יוצרים קשר ואנחנו מבטלים מיד. ללא שאלות, ללא בעיות.',
 
@@ -113,11 +113,11 @@ const translations = {
     'footer.terms': 'תנאי שימוש',
     'footer.privacy': 'מדיניות פרטיות',
     'footer.contact': 'צור קשר',
-    'footer.copy': 'Post-it © 2026 — כל הזכויות שמורות',
+    'footer.copy': 'Propost © 2026 · כל הזכויות שמורות',
   },
 
   en: {
-    'meta.title': 'Post-it — Automatic posting to Facebook groups',
+    'meta.title': 'Propost · Automatic posting to Facebook groups',
     'meta.description': 'The smart bot that posts your properties to dozens of Facebook groups with unique text for each group, photos, and smart scheduling.',
 
     // Nav
@@ -131,12 +131,12 @@ const translations = {
     'cta.choose': 'Choose plan',
 
     // Hero
-    'hero.title': 'Automatic posting to Facebook groups<br><span class="hero-highlight">— without lifting a finger</span>',
+    'hero.title': 'Automatic Facebook group posting<br><span class="hero-highlight">without lifting a finger</span>',
     'hero.subtitle': 'The smart bot that posts your properties to dozens of Facebook groups with unique text for each group, photos, and smart scheduling.',
-    'hero.cta': 'Start free — 3-day trial',
-    'hero.trust1': '⭐ 100+ agents using it',
-    'hero.trust2': '🔒 Account-safe',
-    'hero.trust3': '🇮🇱 Made in Israel',
+    'hero.cta': 'Start 3-day free trial',
+    'hero.trust1': '100+ active agents',
+    'hero.trust2': 'Account-safe',
+    'hero.trust3': 'Made in Israel',
 
     // How it works
     'how.title': 'How does it work?',
@@ -144,29 +144,29 @@ const translations = {
     'how.step1.title': 'Connect Facebook',
     'how.step1.desc': 'Simple connection via the bot, no passwords stored',
     'how.step2.title': 'Add a property',
-    'how.step2.desc': 'Photos, description, price — and AI creates 5 different versions',
+    'how.step2.desc': 'Photos, description, price, and AI creates 5 different versions',
     'how.step3.title': 'Post in one click',
-    'how.step3.desc': 'Pick groups, click post — the bot does the rest',
+    'how.step3.desc': 'Pick groups, click post, and the bot does the rest',
 
     // Features
-    'features.title': 'Why Post-it?',
+    'features.title': 'Why Propost?',
     'features.subtitle': 'The tools that make your posting smarter',
     'features.ai.title': 'AI-generated unique text',
-    'features.ai.desc': 'Different text for each group — looks natural, not spam',
+    'features.ai.desc': 'Different text for each group, looks natural and not spam',
     'features.schedule.title': 'Smart scheduling',
-    'features.schedule.desc': 'Automatic posting every day, every other day, or weekly — you choose',
+    'features.schedule.desc': 'Automatic posting every day, every other day, or weekly. You choose',
     'features.antispam.title': 'Built-in anti-spam',
-    'features.antispam.desc': 'Delays, random order, breaks — protects your account',
+    'features.antispam.desc': 'Delays, random order, breaks, protects your account',
     'features.collections.title': 'Group collections',
-    'features.collections.desc': 'Save favorite groups in collections — post to all with one click',
+    'features.collections.desc': 'Save favorite groups and post to all with one click',
     'features.photos.title': 'Photos',
-    'features.photos.desc': 'Upload up to 10 photos per property — photos sell better',
+    'features.photos.desc': 'Upload up to 10 photos per property. Photos sell better',
     'features.dashboard.title': 'Dashboard',
-    'features.dashboard.desc': 'Track your posts — what worked, what failed',
+    'features.dashboard.desc': 'Track your posts, what worked and what failed',
 
     // Pricing
     'pricing.title': 'Pricing',
-    'pricing.subtitle': 'A plan for every agent — start free, upgrade anytime',
+    'pricing.subtitle': 'A plan for every agent. Start free, upgrade anytime',
     'pricing.popular': 'Most popular',
     'pricing.trial.name': 'Trial',
     'pricing.trial.price': 'Free',
@@ -210,13 +210,13 @@ const translations = {
     // FAQ
     'faq.title': 'Frequently Asked Questions',
     'faq.q1': 'Is it safe for my account?',
-    'faq.a1': 'Yes! The bot operates with human-like delays between posts, different text for each group, and random order. Built-in anti-spam protection keeps your account safe.',
+    'faq.a1': 'Yes. The bot operates with human-like delays between posts, different text for each group, and random order. Built-in anti-spam protection keeps your account safe.',
     'faq.q2': 'How do I connect Facebook?',
     'faq.a2': 'Through the Telegram bot. The connection is secure and encrypted, and we never store your password anywhere.',
     'faq.q3': 'How many groups can I post to?',
-    'faq.a3': 'On Pro and Agency plans — up to 30 groups. On Basic — 15 groups. On Trial — 5 groups.',
+    'faq.a3': 'On Pro and Agency plans up to 30 groups. On Basic 15 groups. On Trial 5 groups.',
     'faq.q4': 'Do I need to install anything?',
-    'faq.a4': 'No! Everything runs through Telegram. No app, extension, or anything else to install. Just open the bot and start.',
+    'faq.a4': 'No. Everything runs through Telegram. No app, extension, or anything else to install. Just open the bot and start.',
     'faq.q5': 'How do I cancel?',
     'faq.a5': 'Anytime, no commitment. Just message the bot or contact us and we cancel immediately. No questions asked.',
 
@@ -228,7 +228,7 @@ const translations = {
     'footer.terms': 'Terms of Service',
     'footer.privacy': 'Privacy Policy',
     'footer.contact': 'Contact',
-    'footer.copy': 'Post-it © 2026 — All rights reserved',
+    'footer.copy': 'Propost © 2026 · All rights reserved',
   },
 };
 
@@ -268,9 +268,8 @@ function applyTranslations(lang) {
 
 function initI18n() {
   // Get saved language or default to Hebrew
-  const saved = localStorage.getItem('postit-lang');
-  const browserLang = navigator.language.startsWith('he') ? 'he' : 'en';
-  const lang = saved || 'he'; // Default to Hebrew
+  const saved = localStorage.getItem('propost-lang');
+  const lang = saved || 'he';
 
   applyTranslations(lang);
 
@@ -280,7 +279,7 @@ function initI18n() {
     if (!target) return;
     const newLang = target.getAttribute('data-lang');
     if (newLang && translations[newLang]) {
-      localStorage.setItem('postit-lang', newLang);
+      localStorage.setItem('propost-lang', newLang);
       applyTranslations(newLang);
     }
   };

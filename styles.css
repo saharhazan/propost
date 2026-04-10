@@ -1,5 +1,5 @@
 /* ===========================
-   Post-it Landing Page
+   Propost Landing Page
    Bilingual (HE / EN) Design
    =========================== */
 
@@ -861,7 +861,7 @@ html[dir="ltr"] .pricing-features li::before {
     content: '✓ ';
 }
 
-/* LTR pricing period — no slash before "month" issue */
+/* LTR pricing period: no slash before "month" issue */
 html[dir="ltr"] .pricing-mo {
     margin-left: 2px;
 }
