@@ -2,7 +2,7 @@
 
 Automatic posting to Facebook groups for Israeli real estate agents.
 
-Bilingual landing page (Hebrew / English) for [@ProPostBot](https://t.me/ProPostBot), the smart Telegram bot that posts your properties to dozens of Facebook groups with unique AI-generated text for each group, photos, and smart scheduling.
+Bilingual landing page (Hebrew / English) for [@PropostAppbot](https://t.me/PropostAppbot), the smart Telegram bot that posts your properties to dozens of Facebook groups with unique AI-generated text for each group, photos, and smart scheduling.
 
 ## Stack
 
