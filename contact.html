@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" dir="rtl" lang="he">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title data-i18n="legal.contact.title">צור קשר · Propost</title>
+<meta name="description" data-i18n="legal.contact.metaDesc" content="יצירת קשר עם צוות Propost. תמיכה, שאלות על השירות, והצעות שיתוף פעולה."/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%234F46E5'/><path d='M10 8h8a4 4 0 014 4v0a4 4 0 01-4 4h-4v8h-4V8z' fill='white'/></svg>"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&amp;family=Heebo:wght@400;700;800&amp;family=Rubik:wght@400;500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          background: '#faf8ff',
+          'surface-container-low': '#f2f3ff',
+          'surface-container-lowest': '#ffffff',
+          primary: '#3525cd',
+          'primary-container': '#4f46e5',
+          'on-background': '#131b2e',
+        },
+        fontFamily: {
+          headline: ['Heebo', 'Inter', 'sans-serif'],
+          body: ['Rubik', 'Inter', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400; display: inline-block; vertical-align: middle; }
+  html[dir="ltr"] body { text-align: left; }
+  html[dir="rtl"] body { text-align: right; }
+  .lang-toggle { display: inline-flex; align-items: center; gap: 4px; font-size: 0.75rem; font-weight: 700; color: #64748b; letter-spacing: 0.05em; text-transform: uppercase; cursor: pointer; background: transparent; border: none; padding: 0; }
+  .lang-option { padding: 0 4px; transition: color 0.2s ease; }
+  .lang-option.active { color: #3525cd; }
+  .lang-sep { color: #cbd5e1; }
+</style>
+</head>
+<body class="bg-background text-on-background font-body">
+
+<nav class="fixed top-0 w-full z-50 bg-slate-50/80 shadow-sm h-20 flex items-center px-4 md:px-6" style="backdrop-filter: blur(12px);">
+  <div class="flex justify-between items-center w-full max-w-4xl mx-auto">
+    <a href="/" class="flex items-center gap-3">
+      <div class="w-10 h-10 bg-gradient-to-br from-indigo-600 to-violet-700 flex items-center justify-center rounded-lg shadow-lg">
+        <span class="material-symbols-outlined text-white text-2xl">architecture</span>
+      </div>
+      <span class="text-xl font-black tracking-tight font-headline">Propost</span>
+    </a>
+    <div class="flex items-center gap-4">
+      <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+        <span class="lang-option" data-lang="he">עברית</span>
+        <span class="lang-sep">|</span>
+        <span class="lang-option" data-lang="en">EN</span>
+      </button>
+      <a href="/" class="text-primary font-bold text-sm" data-i18n="legal.backHome">חזרה לדף הבית</a>
+    </div>
+  </div>
+</nav>
+
+<main class="max-w-4xl mx-auto px-6 pt-32 pb-20">
+  <h1 class="text-4xl md:text-5xl font-black font-headline mb-4" data-i18n="legal.contact.heading">צור קשר</h1>
+  <p class="text-slate-500 mb-12 text-lg" data-i18n="legal.contact.subtitle">כל שאלה, כל בקשה, אנחנו כאן לעזור.</p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+
+    <a href="https://t.me/PropostAppbot" target="_blank" rel="noopener" class="bg-surface-container-lowest p-8 rounded-lg border border-slate-200 hover:border-primary transition-colors block">
+      <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center mb-4">
+        <span class="material-symbols-outlined">chat</span>
+      </div>
+      <h3 class="text-xl font-bold mb-2" data-i18n="legal.contact.telegram.title">טלגרם (המהיר ביותר)</h3>
+      <p class="text-sm text-slate-500 mb-4" data-i18n="legal.contact.telegram.desc">שלחו הודעה ישירות לבוט. מענה תוך שעות ספורות בימי עבודה.</p>
+      <div class="text-primary font-bold text-sm">@PropostAppbot →</div>
+    </a>
+
+    <a href="mailto:hello@propost.co.il" class="bg-surface-container-lowest p-8 rounded-lg border border-slate-200 hover:border-primary transition-colors block">
+      <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center mb-4">
+        <span class="material-symbols-outlined">mail</span>
+      </div>
+      <h3 class="text-xl font-bold mb-2" data-i18n="legal.contact.email.title">אימייל</h3>
+      <p class="text-sm text-slate-500 mb-4" data-i18n="legal.contact.email.desc">לשאלות פורמליות, שיתופי פעולה, או עניינים משפטיים.</p>
+      <div class="text-primary font-bold text-sm">hello@propost.co.il →</div>
+    </a>
+
+  </div>
+
+  <div class="bg-surface-container-low rounded-lg p-8 md:p-12 mb-8">
+    <h2 class="text-2xl font-black font-headline mb-6" data-i18n="legal.contact.form.title">שליחת הודעה</h2>
+    <form id="contactForm" class="space-y-6">
+      <div>
+        <label for="name" class="block text-sm font-bold mb-2" data-i18n="legal.contact.form.name">שם מלא</label>
+        <input type="text" id="name" name="name" required
+          class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-primary focus:outline-none bg-white"
+          data-i18n-placeholder="legal.contact.form.namePlaceholder"
+          placeholder="ישראל ישראלי"/>
+      </div>
+      <div>
+        <label for="email" class="block text-sm font-bold mb-2" data-i18n="legal.contact.form.email">אימייל</label>
+        <input type="email" id="email" name="email" required
+          class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-primary focus:outline-none bg-white"
+          placeholder="you@example.com"/>
+      </div>
+      <div>
+        <label for="topic" class="block text-sm font-bold mb-2" data-i18n="legal.contact.form.topic">נושא</label>
+        <select id="topic" name="topic" required
+          class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-primary focus:outline-none bg-white">
+          <option value="support" data-i18n="legal.contact.form.topicSupport">תמיכה טכנית</option>
+          <option value="sales" data-i18n="legal.contact.form.topicSales">שאלה על השירות</option>
+          <option value="cancel" data-i18n="legal.contact.form.topicCancel">ביטול מנוי</option>
+          <option value="privacy" data-i18n="legal.contact.form.topicPrivacy">פרטיות / הסרה מהמערכת</option>
+          <option value="partnership" data-i18n="legal.contact.form.topicPartnership">שיתוף פעולה</option>
+          <option value="other" data-i18n="legal.contact.form.topicOther">אחר</option>
+        </select>
+      </div>
+      <div>
+        <label for="message" class="block text-sm font-bold mb-2" data-i18n="legal.contact.form.message">הודעה</label>
+        <textarea id="message" name="message" required rows="5"
+          class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-primary focus:outline-none bg-white"
+          data-i18n-placeholder="legal.contact.form.messagePlaceholder"
+          placeholder="ספר לנו במה נוכל לעזור..."></textarea>
+      </div>
+      <button type="submit"
+        class="w-full md:w-auto bg-gradient-to-r from-primary-container to-indigo-700 text-white px-8 py-4 rounded-xl font-bold shadow-xl shadow-indigo-200"
+        data-i18n="legal.contact.form.submit">שלח הודעה</button>
+      <p id="formStatus" class="text-sm mt-4 hidden"></p>
+    </form>
+  </div>
+
+  <div class="bg-indigo-50/50 rounded-lg p-6 text-sm text-slate-600 leading-relaxed" data-i18n="legal.contact.note">
+    <strong>הודעה חשובה:</strong> אנחנו עונים על רוב הפניות תוך 24 שעות בימי עבודה (ראשון עד חמישי). לבקשות דחופות הקשורות לחשבון הפעיל שלך, הדרך המהירה ביותר היא דרך בוט הטלגרם.
+  </div>
+</main>
+
+<footer class="bg-slate-100 py-12 px-6">
+  <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+    <div class="flex items-center gap-2">
+      <div class="w-6 h-6 bg-primary rounded flex items-center justify-center">
+        <span class="material-symbols-outlined text-white text-sm">architecture</span>
+      </div>
+      <span class="font-black">Propost</span>
+    </div>
+    <div class="flex gap-6">
+      <a href="/terms.html" class="hover:text-primary" data-i18n="footer.legal.terms">תנאי שימוש</a>
+      <a href="/privacy.html" class="hover:text-primary" data-i18n="footer.legal.privacy">מדיניות פרטיות</a>
+      <a href="/contact.html" class="hover:text-primary" data-i18n="footer.legal.contact">צור קשר</a>
+    </div>
+    <div data-i18n="footer.copy">© 2026 Propost</div>
+  </div>
+</footer>
+
+<script src="i18n-legal.js"></script>
+<script>
+// Form handler: opens a pre-filled mailto link since we don't have a backend yet.
+// When the bot's HTTP API is ready, swap this for a real POST.
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const topic = document.getElementById('topic').value;
+  const message = document.getElementById('message').value;
+
+  const topicLabels = {
+    support: 'Support',
+    sales: 'Sales question',
+    cancel: 'Cancel subscription',
+    privacy: 'Privacy / data removal',
+    partnership: 'Partnership',
+    other: 'Other',
+  };
+  const subject = encodeURIComponent(`[Propost Contact] ${topicLabels[topic] || topic}`);
+  const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nTopic: ${topicLabels[topic] || topic}\n\n${message}`);
+
+  window.location.href = `mailto:hello@propost.co.il?subject=${subject}&body=${body}`;
+
+  const status = document.getElementById('formStatus');
+  status.textContent = 'נפתח מייל חדש עם ההודעה שלך. תודה!';
+  status.classList.remove('hidden');
+  status.classList.add('text-green-600');
+});
+</script>
+</body>
+</html>
