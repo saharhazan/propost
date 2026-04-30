@@ -1,5 +1,11 @@
 {
   "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/fb-login/:path*",
+      "destination": "http://185.169.252.228:4001/fb-login/:path*"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
